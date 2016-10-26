@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">    
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.css" rel="stylesheet">
+    <link href="/static/css/company_profile.css" rel="stylesheet">
+    <link href="/static/css/edit_profile.css" rel="stylesheet">
+	<link href="/static/css/multiple-select.css" rel="stylesheet">
+	<link href="/static/css/jquery.fancybox.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>Codematch.eu</b></a>
+            <!--logo end-->
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="/logout/">Logout</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu left-menu" id="nav-accordion">
+              
+              	  <p class="centered"><a href="profile.html"><img src="/media/{{company.profile_picture}}" class="img-circle" width="80" height="80"></a></p>
+              	  <h5 class="centered">{{company.user.username}}</h5>
+              	  <li class="mt menu-option">
+                      <a class="menu-option" href="/renderMatchesPage/">
+                          <span>Matches</span>
+                      </a>
+                  </li>
+                  <li class="menu-option">
+                      <a class="" href="">
+                          <span>My Offers</span>
+                      </a>
+                  </li>
+                  <li class="menu-option">
+                      <a class="" href="/companyBatches/">
+                          <span>My Batches</span>
+                      </a>
+                  </li>
+                  <li class="menu-option">
+                      <a class="active" href="/editCompanyProfile/">
+                          <span>Profile</span>
+                      </a>
+                  </li>
+                  <li class="create-offer">
+                      <a class="" href="/renderOfferPage/">
+                          <span>Create offer</span>
+                          <i class="fa fa-plus"></i>
+                      </a>
+                  </li>
+                  <li class="create-offer">
+                      <a class="" href="/applyForBatch">
+                          <span>Apply for Batch</span>
+                          <i class="fa fa-plus"></i>
+                      </a>
+                  </li>
+                  <!--
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>UI Elements</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="general.html">General</a></li>
+                          <li><a  href="buttons.html">Buttons</a></li>
+                          <li><a  href="panels.html">Panels</a></li>
+                      </ul>
+                  </li>
+                  -->
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+				<div class="form-panel">
+					{% if reminder %}
+					  <div class="reminder">{{reminder}}</div>
+					{% endif %}
+                  	  <center><h4 class="mb">Company profile </h4></center>
+                      <div class="form-horizontal style-form">
+                      	<div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label requred">Company</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control company-name" value="{{company.name}}" placeholder="Company name">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label requred">Location</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control location" value="{{company.location}}" placeholder="Sofia, Bulgaria">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label requred">Name</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control userName" value="{{company.username}}" placeholder="FirstName LastName">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label requred">Email</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control company-email" value="{{company.email}}" placeholder="myname@company.com">
+                                  <span class="help-block">The email that you sign up with in codematch and receive notification about matches.</span>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label requred">Company logo</label>
+                              <div style="width:75%;display:inline-block;text-align: center;">
+			                    <img class="img-responsive img-circle img-company" src="/static/img/default_company_profile.jpg" style="width:100px;display:inline-block;" alt="">
+			                    <div >
+			                        <div style="display:inline-block;">
+			                             <input type="file" id="imgUploader" onchange="displayImage();" class="picUploader" accept="image/*">
+			                        </div>
+			                        <!--<span> or </span>
+			                        <div style="display:inline-block;">
+			                             <input  type="text" class="form-control addField srcHolder" placeholder="www.mydomain.com/img/company_logo.png"/>
+			                            <a class="btn btn-default btn-lg srcUpload"><span class="network-name">Upload</span></a>
+			                        </div>-->
+			                    </div>
+			                    <span class="help-block">Select a company logo with same dimensions above 200px: 300x300, 600x600, etc</span>
+			                   </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label requred">Short Description(200 characters)</label>
+                              <div class="col-sm-10">
+                                  <textarea style="min-height: 80px;" class="form-control short-description" placeholder="Briefly describe what your company does/develops"></textarea>
+                                
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label requred">Website url</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control website" placeholder="http://mycompany.com">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label requred">Foundation year</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control foundation" placeholder="2008">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label requred">Company size (number of employees)</label>
+                              <div class="col-sm-10">
+                                  <select class="companysize form-control">
+                                                      <option value="1-15">1 - 15</option>
+                                                      <option value="16-50">16 - 50</option>
+                                                      <option value="51-200">51 - 200</option>
+                                                      <option value="201-500">201 - 500</option>
+                                                      <option value="501-1000">501 - 1000</option>
+                                                      <option value="1001-5000">1001 - 5000</option>
+                                                      <option value="5000+">5000+</option>
+                                          </select>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label requred">Industry</label>
+                              <div class="col-sm-10">
+                                  <select class="industry">
+                                                  <option value="Ad tech">Ad tech</option>
+                                                  <option value="Big Data & Analytics ">Big Data & Analytics </option>
+                                                  <option value="Cloud Computing">Cloud Computing</option>
+                                                  <option value="Consumer Mobile">Consumer Mobile</option>
+                                                  <option value="E-commerce">E-commerce</option>
+                                                  <option value="Education">Education</option>
+                                                  <option value="Energy">Energy</option>
+                                                  <option value="Enterprise Software">Enterprise Software</option>
+                                                  <option value="Fashion">Fashion</option>
+                                                  <option value="Finance/Insurance">Finance/Insurance</option>
+                                                  <option value="Gaming">Gaming</option>
+                                                  <option value="Health & Wellness">Health & Wellness</option>
+                                                  <option value="Legal">Legal</option>
+                                                  <option value="Marketplace">Marketplace</option>
+                                                  <option value="Media & Content">Media & Content</option>
+                                                  <option value="Messaging">Messaging</option>
+                                                  <option value="Non-profit">Non-profit</option>
+                                                  <option value="Platform">Platform</option>
+                                                  <option value="Recruiting">Recruiting</option>
+                                                  <option value="Sports">Sports</option>
+                                                  <option value="Travel">Travel</option>
+                                        </select>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label requred">Tech stack</label>
+                              <div class="col-sm-10">
+                                  <select class="tech-stack">
+                                                  <option value="PHP">PHP</option>
+												  <option value="Node.js">Node.js</option>
+												  <option value="Python">Python</option>
+												  <option value="Ruby">Ruby</option>
+												  <option value="Java">Java</option>
+												  <option value="Javascript">Javascript</option>
+												  <option value="HTML">HTML</option>
+												  <option value="CSS">CSS</option>
+												  <option value="Swift">Swift</option>
+												  <option value="C#">C#</option>
+												  <option value="C++">C++</option>
+												  <option value="C">C</option>
+                                        </select>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Software Used</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control softwareUsed" placeholder="Slack, Assana, Kanbanize, Scrum boards,...">
+                              	  <span class="help-block">Comma-separated list of the software platforms that your company uses during daily processes.</span>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Funding</label>
+                              <div class="col-sm-10">
+                                  <select class="funding form-control">
+                                                      <option value="Bootstrapped">Bootstrapped</option>
+                                                      <option value="Seed">Seed</option>
+                                                      <option value="Series A">Series A</option>
+                                                      <option value="Series B+">Series B+</option>
+                                                      <option value="Bootstrapped and Profitable">Bootstrapped and Profitable</option>
+                                                      <option value="Major Corporation">Major Corporation</option>
+                                          </select>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Investors</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control investors" placeholder="Mark Cuban, Eleven, ...">
+                                  <span class="help-block">Comma-separated list of investors or Accelerators that fund your company.</span>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Average annual Salary</label>
+                              <div class="col-sm-10">
+                                  <select class="salary form-control">
+                                                      <option value="<10000"> < 10 000&#8364</option>
+                                                      <option value="10000-20000">10 000&#8364 - 20 000&#8364</option>
+                                                      <option value="20000-50000">20 000&#8364 - 50 000&#8364</option>
+                                                      <option value="50000-75000">50 000&#8364 - 75 000&#8364</option>
+                                                      <option value=">75000">> 75000&#8364</option>
+                                          </select>
+                              </div>
+                          </div>
+							<div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Perks</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control perks" placeholder="Health insurance, performance bonus, ...">
+                                  <span class="help-block">Comma-separated list of perks or assests that your employees can benefit from.</span>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Video url</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control video" placeholder="www.mycompany.com/video_description">
+                                  <span class="help-block">Promotional or description video of your company.</span>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Crunch base profile url</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control crunchbase" placeholder="https://www.crunchbase.com/myprofile">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Angel List profile url</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control angellist" placeholder="https://angel.co/myprofile">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Facebook page url</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control fbpage" placeholder="https://facebook.com/mycompanypage">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Twitter page url</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control twitterpage" placeholder="https://twiiter.com/mycompanypage">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Youtube channel url</label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control youtube" placeholder="https://youtube.com/companychannel">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Long description</label>
+                              <div class="col-sm-10">
+                                  <textarea style="min-height: 100px;" class="form-control longdescription" placeholder="Type here"></textarea>
+                                  <span class="help-block">Here you can describe with more details your Product, Mission, History, Company culture etc.).</span>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                          	<div>
+                          		<center><div >Here you can add pictures of you workplace, office, team, company events etc.</div>
+                          			<div style="margin-bottom:15px;">
+                          			 This would make your company more appealing to matches and increase your chances to hire. </div>	 
+                          		</center>
+                          		<input type="file" id="imgUploader" onchange="displayImage();" class="picUploader company-images" accept="image/*">
+                          	</div>
+                          	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc img-col">
+								<div class="project-wrapper">
+				                    <div class="project">
+				                        <div class="photo-wrapper">
+				                            <div class="photo">
+				                            	<a class="fancybox" href="/static/img/portfolio/dreams.png">
+				                            		<img class="img-responsive" src="/static/img/portfolio/dreams.png" alt=""></a>
+				                            </div>
+				                            <div class="overlay"></div>
+				                        </div>
+				                    </div>
+				                </div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc img-col">
+								<div class="project-wrapper">
+				                    <div class="project">
+				                        <div class="photo-wrapper">
+				                            <div class="photo">
+				                            	<a class="fancybox" href="/static/img/portfolio/limits.png">
+				                            		<img class="img-responsive" src="/static/img/portfolio/limits.png" alt=""></a>
+				                            </div>
+				                            <div class="overlay"></div>
+				                        </div>
+				                    </div>
+				                </div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc img-col">
+								<div class="project-wrapper">
+				                    <div class="project">
+				                        <div class="photo-wrapper">
+				                            <div class="photo">
+				                            	<a class="fancybox" href="/static/img/portfolio/hand-freeze.png">
+				                            		<img class="img-responsive" src="/static/img/portfolio/hand-freeze.png" alt=""></a>
+				                            </div>
+				                            <div class="overlay"></div>
+				                        </div>
+				                    </div>
+				                </div>
+							</div>
+							
+                          </div>
+                          <div class="form-group completeProfile">
+                              <button type="button" class="btn btn-default completeProfileBtn">Create offer</button>
+                          </div>
+                          </div>
+
+                      </div>
+                  </div>
+          </section>
+      </section>
+
+      <!--main content end-->
+      <!--footer start-->
+      <footer class="site-footer" hidden>
+          <div class="text-center">
+              2014 - Alvarez.is
+              <a href="index.html#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+      <!--footer end-->
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/jquery.fancybox.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.nicescroll.js" type="text/javascript"></script>
+	
+    <!--common script for all pages-->
+    <script src="/static/js/common-scripts.js"></script>
+    <script src="/static/js/company_register.js"></script>
+    <script src="/static/js/multiple-select.js"></script>
+    <script type="text/javascript">
+      window.onload = function(){
+            $('.industry').multipleSelect();
+            $('.tech-stack').multipleSelect();
+            $(".fancybox").fancybox();
+        };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+.btn-l-dev {
+    color: rgba(0,0,0,0.9);
+    background-color: rgb(230, 230, 230);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 3px;
+    font-size: 17px;
+    padding: 20px 40px
+}
+
+.btn-l-com {
+    color: rgba(255,255,255,0.9);
+    background-color: rgb(45, 40, 40);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 3px;
+    font-size: 17px;
+    padding: 20px 40px
+}
+.btn-l-com:hover{
+	 color: rgba(255,255,255,0.9);
+}
+.email-signup{
+	margin-right:50px;
+}
+.line-text{
+	background-color:#3C843C;
+	color:white;
+}
+.line-text h3{
+	margin:30px 0px !important;
+}
+.line-sub{
+	font-size:20px !important;
+	color:#3C843C;
+}
+.line-sub-2{
+	font-size:17px !important;
+	color:#3C843C;
+	margin-top:80px;
+	margin-bottom:0px !important;
+}
+.line-main{
+	font-size:28px !important;
+}
+.grey-bkg{
+	background-color:#f2f2f2 !important;
+}
+.white-bkg{
+	background-color:white !important;
+}
+.green-bkg{
+	background-color:#3C843C !important;
+}
+#timeprint{
+	color:white !important;
+}
+.shape-side{
+	width:200px;
+	height:200px;
+	opacity: 0.7;
+	margin-top:20%;
+}
+.center-shape{
+	height:340px;
+	width: 340px;
+}
+.share-img{
+	background-color:#3C843C;
+	border-radius:50%;
+	width:150px;
+}
+.share-btn{
+	margin:5px;
+	width:200px;
+	height:45px;
+	cursor: pointer;
+}
+.demo {
+	color:white;
+	padding:15px;
+	font-size:16px;
+	background-color:#3C843C;
+	border-radius:2px;
+	cursor: pointer;
+}
+.batch-detail{
+	border:1px solid #3C843C;
+	margin:0px 5px;
+	width:30% !important;
+	float:none !important;
+	display:inline-block;
+}
+.batch-title{
+	font-size:20px;
+}
+.batch-txt{
+	font-size:16px;
+	margin:15px 0px;
+}
+.pluginButtonLabel{
+	padding:30px !important;
+}
+.service-heading{
+	margin:20px !important;
+}
+.timeline-image img{
+	width:100%;
+	height:100%;
+}
+.batch-detail img{
+	width:100%;
+	height:100%;
+	margin-top:20px;
+}
+.batch-title{
+	margin-top:40px;
+}

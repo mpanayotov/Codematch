@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">    
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.css" rel="stylesheet">
+    <link href="/static/css/allpages.css" rel="stylesheet">
+    <link href="/static/css/edit_profile.css" rel="stylesheet">
+	<link href="/static/css/multiple-select.css" rel="stylesheet">
+	<link href="/static/css/jquery.fancybox.css" rel="stylesheet">
+	<link href="/static/css/talent_profile.css" rel="stylesheet">
+	<link href="/static/css/chart.css" rel="stylesheet">
+	<link href="/static/css/time_options_radar.css" rel="stylesheet">
+	<link href="/static/css/editors.css" rel="stylesheet">
+	<link href="/static/css/devicon.css" rel="stylesheet">
+	<link href="/static/css/rangeslider.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>Codematch.eu</b></a>
+            <!--logo end-->
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="/logout/">Logout</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu left-menu" id="nav-accordion">
+              
+              	  <p class="centered"><a ><img src="/media/{{talent.profile_picture}}" class="img-round img-sidebar" width="80" height="80"></a></p>
+              	  <h5 class="centered">{{talent.username}}</h5>
+              	  <li class="mt menu-option">
+                      <a class="menu-option" href="/talent/matches/">
+                          <span>Matches</span>
+                      </a>
+                  </li>
+
+                  <!--<li class="menu-option">
+                      <a class="" href="/talent/batches/">
+                          <span>My Batches</span>
+                      </a>
+                  </li>-->
+                  <li class="menu-option">
+                      <a class="active" href="/talent/profile/">
+                          <span>Profile</span>
+                      </a>
+                  </li>
+                  <li class="menu-option">
+                      <a class="" href="/talent/batches/">
+                          <span>Apply for Batch</span>
+                      </a>
+                  </li>
+                  <li class="menu-option">
+                        <a class="" href="/talent/inbox/"><span>Inbox</span></a>
+                    </li>
+                  <!--
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>UI Elements</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="general.html">General</a></li>
+                          <li><a  href="buttons.html">Buttons</a></li>
+                          <li><a  href="panels.html">Panels</a></li>
+                      </ul>
+                  </li>
+                  -->
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+          	<div style="margin-top:30px;"></div>
+          	<div class="col-sm-6 text-center">
+          	<div style="width:80%;margin:0 auto;" class="text-center">
+					<center>
+						<div class="pic-holder">
+							<img src="/media/{{talent.profile_picture}}" class="img-circle profile-img">
+							<input type="file" onchange="editProfilePicture();" class="picUploader" accept="image/*">
+						</div>
+					</center>
+					<div class="username edit-field">{{talent.username}}</div>
+					<div class="location edit-field">{{talent.location}}</div>
+					<div class="role edit-field">{{talent.role | safe}}</div>
+					<div class="work-description edit-field">{{talent.work_description | safe}}</div>
+					<div class="techSkills edit-field">
+					</div>
+					<div class="exp-level edit-field">
+						<a class="btn btn-default btn-lg exp-lvl exp-original"><span class="network-name" >{{talent.exp_level}}</span></a>
+					</div>
+					<div class="worktype edit-field">
+						<a class="btn btn-default btn-lg work-type worktype-original"><span class="network-name" >{{talent.work_type}}</span></a>
+					</div>
+					<div class="relocation edit-field">
+						{% if talent.relocate %}
+							<a class="btn btn-default btn-lg relocate rel-original"><span value='1' class="network-name" >Can Relocate</span></a>
+						{% else %}
+							<a class="btn btn-default btn-lg relocate rel-original"><span value='0' class="network-name" >On my location</span></a>
+						{% endif %}
+					</div>
+					<div class="editor edit-field"><img value="{{talent.editor}}" class="{{talent.editor}} ed-original">
+						<div class='text-center ed-options' hidden>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='sublime' class='editor-imgs' src='/static/img/editor_images/sublime-text.png'>
+                    			<span style='display: block;'>SublimeText</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='vim' class='editor-imgs' src='/static/img/editor_images/vim.png'>
+                    			<span style='display: block;'>Vim</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='eclipse' class='editor-imgs' src='/static/img/editor_images/eclipse.png'>
+                    			<span style='display: block;'>Eclipse</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='emacs' class='editor-imgs' src='/static/img/editor_images/emacs.png'>
+                    			<span style='display: block;'>Emacs</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='notepad' class='editor-imgs' src='/static/img/editor_images/notepad.png'>
+                    			<span style='display: block;'>Notepad++</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='intellij' class='editor-imgs' src='/static/img/editor_images/intellij.png'>
+                    			<span style='display: block;'>IntelliJ</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='visual-studio' class='editor-imgs' src='/static/img/editor_images/visual-studio.png'>
+                    			<span style='display: block;'>Visual Studio</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='dreamweaver' class='editor-imgs' src='/static/img/editor_images/dreamweaver.png'>
+                    			<span style='display: block;'>Dreamweaver</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='netbeans' class='editor-imgs' src='/static/img/editor_images/netbeans.png'>
+                    			<span style='display: block;'>NetBeans</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='brackets' class='editor-imgs' src='/static/img/editor_images/brackets.png'>
+                    			<span style='display: block;'>Brackets</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='phpstorm' class='editor-imgs' src='/static/img/editor_images/phpstorm.png'>
+                    			<span style='display: block;'>PhpStorm</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='xcode' class='editor-imgs' src='/static/img/editor_images/xcode.png'>
+                    			<span style='display: block;'>Xcode</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='atom' class='editor-imgs' src='/static/img/editor_images/atom.png'>
+                    			<span style='display: block;'>Atom</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='coda' class='editor-imgs' src='/static/img/editor_images/coda.png'>
+                    			<span style='display: block;'>Coda</span>
+                    		</div>
+                    		<div style='display:inline-block;'>
+                    			<img picked='false' value='aptana' class='editor-imgs' src='/static/img/editor_images/aptana.jpg'>
+                    			<span style='display: block;'>Aptana</span>
+                    		</div>
+                    	</div>
+					</div>
+					<div class="os edit-field"><img value="{{talent.operating_system}}" class="{{talent.operating_system}} os-original">
+						<div class="text-center os-options" hidden>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="osx" class="os-imgs" src="/static/img/osx.png">
+                    			<span style="display: block;">OSX</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="linux" class="os-imgs" src="/static/img/linux.png">
+                    			<span style="display: block;">Linux</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="windows" class="os-imgs" src="/static/img/windows.png">
+                    			<span style="display: block;">Windows</span>
+                    		</div>
+                    	</div>
+					</div>
+					<div class="holder edit-field">
+						<a target="_blank" href="{{talent.github_url}}"><img class="github"></a>
+						<a target="_blank" href="{{talent.linkedin_url}}"><img class="linkedin"></a>
+					</div>
+					<div class="invalid-url" hidden>adas</div>
+					<div class="holder"></div>
+				</div>
+				</div>
+				<div class="col-sm-6 text-center">
+					<center>
+						 <div class="chartHolder">
+								  	<span class="chart-label analysis">Analysis</span>
+							  		<span class="chart-label data-science rotateneg35">Data Science</span>
+							  		<span class="chart-label documentation rotateneg75">Documentation</span>
+							  		<span class="chart-label code-review rotate75">Code Review</span>
+							  		<span class="chart-label testing rotate35">Testing</span>
+							  		<span class="chart-label ui">UI/UX</span>
+							  		<span class="chart-label front-end rotateneg35">Front-End</span>
+							  		<span class="chart-label back-end rotateneg75">Back-End</span>
+							  		<span class="chart-label operations rotate75">Operations</span>
+							  		<span class="chart-label architecture rotate35">Architecture</span>
+								  	<div id="chart"></div>
+							</div>
+						</center>
+						<div class="time-chart-edit">Edit timeprint</div>
+					<!--<div class="salary-div edit-field"><span>Desired Salary: </span> <span class="salary">{{talent.salary}}</span> &#8364</div>-->
+					<div class="col-lg-12" style="margin-top:25px;">
+								<div class="over text-center">Min. Salary</div>
+								<center>
+														<div class="col-lg-8" style="display:inline-block;float:none;">
+															<input
+																class="salaryRange"
+															    type="range"
+															    min="1"
+															    max="210"
+															    step="1"
+															    value="1"
+															>
+									</div>
+								</center>
+								<div class="under text-center"><span>&#8364</span><span class="edit-salary"></span>k / year</div>
+					</div>
+					<div class="col-lg-12" style="margin-top:25px;">
+						<div class="batch-col">Receive matches outside batches</div>
+						<div class="switch has-switch">
+							{% if talent.can_match_outside_batch %}
+							<div class="switch-on switch-animate">
+							{% else %}
+							<div class="switch-off switch-animate">
+							{% endif %}
+								<input type="checkbox" data-toggle="switch">
+								<span class="switch-left">ON</span><label>&nbsp;</label>
+								<span class="switch-right">OFF</span>
+							</div>
+						</div>
+						<div class="batch-explain">What is a <span class="batch-enhance">Batch</span>?</div>
+					</div>
+				</div>
+				<div class="col-lg-12 text-center">
+					{% if talent.can_match_outside_batch %}
+					<div class="save-match-holder"><div class="saveAndMatch">Save & Match</div></div>
+					<div class="save-changes-holder" hidden><div class="saveChanges">Save Changes</div></div>
+					{% else %}
+					<div class="save-match-holder" hidden><div class="saveAndMatch">Save & Match</div></div>
+					<div class="save-changes-holder"><div class="saveChanges">Save Changes</div></div>
+					{% endif %}
+				</div>
+				
+				<br style="clear:both;">
+				<!--<div class="text-center">
+					<a href="/talent/edit/" class="btn btn-default btn-lg"><span class="network-name" >Edit</span></a>
+				</div>-->
+          </section>
+      </section>
+		<div id="tech-stack-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="false">
+		  <div class="modal-dialog tech-container">
+		  	<div class="modal-content">
+		  		<div class="line-stack">Your Favourite Tech Stack</div>
+				<div class="selected-skills">
+				</div>
+				<div class="skills-counter">5/5</div>
+				<div class="skills-to-select">
+					
+				</div>
+				<div class="btns">
+					<a class="btn-lg cancel"><span>Cancel</span></a>
+					<a class="btn-lg saveSkills"><span>Save</span></a>
+				</div>
+				<br style="clear:both;" />
+		  	</div>
+		  </div>
+		</div>
+		<div id="batch-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="false">
+		  <div class="modal-dialog">
+		  	<div class="modal-content batch-info">
+		  		<div class="batch-explanation"><span class="batch-enhance">Batch</span>
+		  			is a digital job fair where we approve top-ranked companies and talents and give them 15-day period
+		  			during which they can match and engage. In order to be part of a batch, first you have to apply for it.
+		  		</div>
+		  		<div class="batch-explanation">You can check the upcoming batches <a href="/talent/batches/">here</a>.</div>
+		  		<div class="text-center"><span class="okay-btn">Okay, I got it</span></div>
+				<br style="clear:both;" />
+		  	</div>
+		  </div>
+		</div>
+		<div id="search-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="false">
+		  <div class="modal-dialog">
+		  	<div class="search">
+		  		<center>
+		  			<div class="search-line">Looking for the best fit for you!</div>
+		  			<div><img src="/static/img/ajax-loader.gif"></div>
+		  		</center>
+		  	</div>
+		  </div>
+		</div>
+      <!--main content end-->
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/jquery.fancybox.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="/static/js/rangeslider.js" type="text/javascript"></script>
+    <!--common script for all pages-->
+    <script src="/static/js/common-scripts.js"></script>
+    <script src="/static/js/multiple-select.js"></script>
+    <script src="/static/js/talent_profile.js"></script>
+    <script src="/static/js/d3.v3.min.js"></script>
+    <script src="/static/js/time_options_radar.js"></script>
+    <script src="/static/js/edit_talent_profile.js"></script>
+    <script src="/static/js/time_chart_explanation.js"></script>
+    <script src="/static/js/balance_timeprint.js"></script>
+    <script src="/static/js/zopim.js"></script>
+    <script type="text/javascript">
+    	var tech_stack = "{{tech_stack}}";
+    	var time_options = [];
+      window.onload = function(){
+			var techSkills = {};
+      		var skills = JSON.stringify("{{talent.tech_skills}}".replace(/&quot;/g, '"'));
+      		techSkills = JSON.parse(skills);
+      		displayTechSkills(techSkills);
+      		
+      		var time_data = JSON.stringify("{{talent.time_preferences}}".replace(/&quot;/g, '"'));
+      		var timeOptions = JSON.parse(time_data);
+      		var arr = timeOptions.substring(1,timeOptions.length-1).split("},");
+      		arr = arr.map(function(el){
+      			if(el[el.length-1] != "}")
+      				return el+"}";
+      			else
+      				return el;
+      		});
+
+      		for (var i=0; i < arr.length; i++) {
+					time_options.push(JSON.parse(arr[i]));
+			  };
+			options.radius = 0;
+			time_options = time_options.map(function(el){
+				el.value = el.position;
+				return el;
+			});
+      		MovableRadarChart.draw("#chart", time_options, options);
+      		
+      		$(".salaryRange").on('change', function(){
+			 		$(".edit-salary").html($(this).val());
+			});
+			$('.salaryRange').rangeslider({polyfill: false});
+            $('.salaryRange').val("{{talent.salary}}").change();
+      	};
+    </script>
+  </body>
+</html>

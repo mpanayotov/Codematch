@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Landing Page - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/company_register.css" rel="stylesheet">
+    <link href="css/multiple-select.css" rel="stylesheet"/>
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                <div style="display:inline-block;width:10%;position:relative;text-align:center;">
+                    <span >1.Your company logo/picture</span>
+                </div>
+                <div style="width:80%;display:inline-block;">
+                    <img class="img-responsive img-circle img-company" src="img/default_company_profile.jpg" style="width:100px;display:inline-block;" alt="">
+                    <div >
+                        <div style="display:inline-block;">
+                             <input type="file" id="car_image" onchange="uploadCarImage();" class="picUploader" accept="image/*">
+                        </div>
+                        <span> or </span>
+                        <div style="display:inline-block;">
+                             <input  type="text" class="form-control addField" placeholder="www.mydomain.com/img/company_logo.png"/>
+                            <a class="btn btn-default btn-lg addBtn"><span class="network-name">Upload</span></a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6" style="margin-bottom:20px;">
+                <div style="display:inline-block;width:10%;position:relative;text-align:center;">
+                     <span >2.Your company name</span>
+                </div>
+                 <div style="width:80%;display:inline-block;">
+                    <div>
+                        <div style="display:inline-block;">
+                             <input  type="text" class="form-control addField" placeholder="MyCompany Inc."/>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-5 col-sm-6">
+                <div style="display:inline-block;width:10%;position:relative;text-align:center;">
+                     <span >3.Your company email*(where you will be notified about your matches)</span>
+                    </div>
+                     <div style="width:80%;display:inline-block;">
+                    <div>
+                        <div style="display:inline-block;">
+                             <input  type="text" class="form-control addField" placeholder="office@mycompany.com"/>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+        <!-- /.container -->
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a profileHolder">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6 interests-section">
+                <div style="display:inline-block;width:10%;position:relative;text-align:center;">
+                     <span>4.Describe what is your company's main product/service.</span>
+                    </div>
+                    <div style="width:80%;display:inline-block;">
+                    <div>
+                        <div style="display:inline-block;">
+                             <textarea class="form-control summary" placeholder="Type here"></textarea>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+</div>
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6" style="margin-bottom:20px;">
+                <div style="display:inline-block;width:10%;position:relative;text-align:center;">
+                     <span >5.Field of company products/services</span>
+                </div>
+               <div style="width:80%;display:inline-block;">
+                    <div>
+                        <div style="display:inline-block;">
+                             <select class="itfields-type">
+                              <option value="">Consumer-end Software Products</option>
+                              <option value="">Big Data Analyses</option>
+                              <option value="">Image Recognition Software</option>
+                              <option value="">E-Commerce Communication Systems</option>
+                              <option value="">Management Software</option>
+                              <option value="">Security Software</option>
+                              <option value="">Games/Gaming Software</option>
+                              <option value="">Trading/Financial Software</option>
+                              <option value="">On-demand Software/Platforms</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-5 col-sm-6" style="margin-bottom:30px;">
+                <div style="display:inline-block;width:10%;position:relative;text-align:center;">
+                     <span >6.Perks</span>
+                    </div>
+                  <div style="width:80%;display:inline-block;">
+                    <div>
+                        <div style="display:inline-block;">
+                             <select class="itfields-type">
+                              <option value="">Health insurance</option>
+                              <option value="">Food vaucher</option>
+                              <option value="">Image Recognition Software</option>
+                              <option value="">E-Commerce Communication Systems</option>
+                              <option value="">Management Software</option>
+                              <option value="">Security Software</option>
+                              <option value="">Games/Gaming Software</option>
+                              <option value="">Trading/Financial Software</option>
+                              <option value="">On-demand Software/Platforms</option>
+                            </select>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6">
+                <div style="display:inline-block;width:10%;position:relative;text-align:center;">
+                     <span >7.Company type</span>
+                    </div>
+                  <div style="width:80%;display:inline-block;">
+                    <div>
+                        <div style="display:inline-block;">
+                             <select>
+                              <option value="">Start-up (0 - 10 employees)</option>
+                              <option value="">Scale-up (10 - 30 employees)</option>
+                              <option value="">Corporate (30+ employees)</option>
+                            </select>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6 interests-section">
+                <div style="text-align:center;margin:20px 0px;">
+                    <a class="btn btn-default btn-lg saveBtn" href="index.html"><span class="network-name">Create profile</span></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/multiple-select.js"></script>
+    <script>
+        window.onload = function(){
+            $('.itfields-type').multipleSelect();
+        };
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+.form-group input, .form-group textarea{
+	color:black !important;
+}
+.img-company{
+	width:150px !important;
+	height:150px !important;
+}
+.form-horizontal{
+	color:black !important;
+	font-size:15px !important;
+}
+
+.img-responsive{
+	max-height:290px;
+	margin: 0 auto;
+}
+.photo-wrapper{
+	background-color: transparent;
+}
+#imgUploader{
+	width:200px;
+}
+.company-images{
+	margin-bottom:15px !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.industry, .tech-stack, .perks{
+	width:90%;
+}
+.requred:after {
+    color: red;
+    content: " *";
+}
+.completeProfile{
+	text-align:center;
+}
+.completeProfileBtn{
+	font-size: 18px;
+    cursor: pointer;
+    color: rgba(0,0,0,0.9);
+    padding:5px 10px;
+}
+.completeProfileBtn:hover{
+	background-color:#DADADA;
+}
+.gl{
+	font-size:14px;
+	color:rgba(0,0,0,0.85);
+}
