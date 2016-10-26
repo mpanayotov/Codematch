@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">    
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/allpages.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.css" rel="stylesheet">
+    <link href="/static/css/devicon.css" rel="stylesheet">
+    <link href="/static/css/chart.css" rel="stylesheet">
+	<link href="/static/css/time_options_radar.css" rel="stylesheet">
+    <link href="/static/css/editors.css" rel="stylesheet">
+    <link href="/static/css/admin_page.css" rel="stylesheet">
+    <link href="/static/css/company_profile.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" >
+  		<div class="col-lg-12"><center><div class="chart-test"></div></center></div>
+  		<div class="batchHolder batch-default" hidden>
+  			<div class="batch text-center"></div>
+  			<div class="batchInfo text-center"></div>
+  			<div class="text-center"><div class="findMatchBtn">FIND MATCHES</div></div>
+			<div class="col-lg-6 companiesSection text-center">
+				<div class="companies">
+					<div class="company-position position-default" hidden>
+			          	<div class="col-sm-6 text-center">
+									<center>
+										<div class="pic-holder">
+											<img src="/static/img/default_company_profile.jpg" class="img-circle company-img">
+										</div>
+									</center>
+									<div class="more-company edit-field"></div>
+									<div class="companyname edit-field"></div>
+									<div class="companylocation edit-field"></div>
+									<div class="positionrole edit-field"></div>
+									<div class="project-description edit-field"></div>
+									<div class="detailsInfoCompany edit-field">
+										<!--
+											<a class="relocate rel-original"><span value='Yes' class="network-name" >Can Relocate</span></a>
+											<a class="relocate rel-original"><span value='No' class="network-name" >Can Relocate</span></a>
+										-->
+									</div>
+						</div>
+						<div class="col-sm-6 text-center">
+								<center>
+									 <div class="chartHolder chart-company-position">
+										<div id="chart-position"></div>
+									</div>
+									</center>
+									<div class="techStackPosition edit-field">
+										<!--
+											<a class='btn btn-default btn-lg tech'><i class='devicon-2'></i>
+											<span class='network-name'>Java</span></a>
+											<a class='btn btn-default btn-lg tech'><i class='devicon-2'></i>
+											<span class='network-name'>Java</span></a>
+											<a class='btn btn-default btn-lg tech'><i class='devicon-2'></i>
+											<span class='network-name'>Java</span></a>
+											<a class='btn btn-default btn-lg tech'><i class='devicon-2'></i>
+											<span class='network-name'>Java</span></a>
+											<a class='btn btn-default btn-lg tech'><i class='devicon-2'></i>
+											<span class='network-name'>Java</span></a>
+										-->
+									</div>
+								<div class="salary-div edit-field"><span>Max. Salary: </span> <span class="companysalary"></span> &#8364</div>
+							</div>
+							<br style="clear:both;">
+						</div>
+				</div>
+				<div class="approveBtnCompany text-center" hidden>APPROVE</div>
+				<div class="approved-company text-center" hidden>ALREADY APPROVED</div>
+			</div>
+			<div class="col-lg-6 talentsSection">
+				<div class="talent talent-default" hidden>
+					<div class="col-sm-6 text-center">
+							<center>
+								 <div class="chartHolder">
+									<div id="chart"></div>
+								</div>
+								</center>
+								<div class="techSkills edit-field">
+									<!--
+										<a class='btn btn-default btn-lg tech'><i class='devicon-2'></i>
+										<span class='network-name'>Java</span></a>
+										<a class='btn btn-default btn-lg tech'><i class='devicon-2'></i>
+										<span class='network-name'>Java</span></a>
+										<a class='btn btn-default btn-lg tech'><i class='devicon-2'></i>
+										<span class='network-name'>Java</span></a>
+										<a class='btn btn-default btn-lg tech'><i class='devicon-2'></i>
+										<span class='network-name'>Java</span></a>
+										<a class='btn btn-default btn-lg tech'><i class='devicon-2'></i>
+										<span class='network-name'>Java</span></a>
+									-->
+								</div>
+							<div class="salary-div edit-field"><span>Desired Salary: </span> <span class="salary"></span> &#8364</div>
+						</div>
+			          	<div class="col-sm-6 text-center">
+									<center>
+										<div class="pic-holder">
+											<img src="/static/img/default_company_profile.jpg" class="img-circle profile-img">
+										</div>
+									</center>
+									<div class="username edit-field"></div>
+									<div class="location edit-field"></div>
+									<div class="role edit-field"></div>
+									<div class="work-description edit-field"></div>
+									<div class="detailsInfo edit-field">
+										<!--
+											<a class="relocate rel-original"><span value='Yes' class="network-name" >Can Relocate</span></a>
+											<a class="relocate rel-original"><span value='No' class="network-name" >Can Relocate</span></a>
+										-->
+									</div>
+									<div class="holder edit-field">
+										<img  class="ed-original">
+										<img  class="os-original">
+										<a target="_blank" href=""><img class="github"></a>
+										<a target="_blank" href=""><img class="linkedin"></a>
+									</div>
+						</div>
+						<br style="clear:both;">
+						<div class="other-info text-center">
+							<div class="text-center matches-line">Possible Matches</div>
+							<div class="col-lg-12 possible-match possible-match-default" hidden>
+								<div class="col-lg-6">
+									<div id="chart-match">				
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="match-tech-skills" style="margin-top:10px;">
+											<!--
+											<a class='btn btn-default btn-lg match-tech'><i class='devicon-2'></i>
+											<span class='network-name'>Java</span></a>
+											<a class='btn btn-default btn-lg match-tech'><i class='devicon-2'></i>
+											<span class='network-name'>Java</span></a>
+											<a class='btn btn-default btn-lg match-tech'><i class='devicon-2'></i>
+											<span class='network-name'>Java</span></a>
+											<a class='btn btn-default btn-lg match-tech'><i class='devicon-2'></i>
+											<span class='network-name'>Java</span></a>
+											<a class='btn btn-default btn-lg match-tech'><i class='devicon-2'></i>
+											<span class='network-name'>Java</span></a>
+											-->
+									</div>
+									<div class="match-salary"></div>
+									<div class="match-company"></div>
+									<div class="match-position"></div>
+									<div class="match-score"></div>
+								</div>
+							</div>
+						</div>
+						<br style="clear:both;">
+					<div class="approveBtn text-center" hidden>APPROVE</div>
+					<div class="approved text-center" hidden>ALREADY APPROVED</div>
+				</div>
+			</div>
+		</div>
+  </section>
+  <section>
+  	<div class="companiesDetailsInfo">
+            <div aria-hidden='false' class='modal fade' id='company-modal' role='dialog' tabindex='-1'>
+                <div class='modal-dialog companyInfo'>
+                    <div class='modal-content'>
+                        <section>
+                            <div class="form-panel">
+                                <div class="form-group">
+                                    <div class="col-sm-2 col-sm-2 text-center"><img class="img-round img-company" height="80" src=
+                                    "/media/company_profile_pictures/parkingsector.png" width="80"></div>
+                                    <div class="col-sm-10">
+                                        <div class="nameHolder"></div>
+                                        <div class="shortDescription"></div>
+                                        <div class="location"></div>
+                                        <div class="otherInfo">
+                                            <span class="foundation-year separator"></span> <span class="company-size separator"></span> <span class="industry"></span>
+                                        </div>
+                                    </div>
+                                </div><br style="clear:both;">
+                            </div>
+                            <div class="form-panel">
+                                <div class="col-sm-8">
+                                    <div class="about"></div>
+                                    <div class="videoHolder col-sm-12">
+                                        <iframe class="videoUrl"></iframe>
+                                    </div>
+                                    <div class="picturesHolder col-lg-12"></div>
+                                    <div class="longDescription col-lg-12"></div>
+                                </div>
+                                <div class="col-sm-4 moreInfo">
+                                    <div class="techStackHolder">
+                                        <div>
+                                            TECH STACK
+                                        </div>
+                                        <ul class="techStack"></ul>
+                                    </div>
+                                    <div class="perks">
+                                        <div>
+                                            PERKS
+                                        </div>
+                                        <ul class="perksList"></ul>
+                                    </div>
+                                    <div class="investors" hidden="">
+                                        <div>
+                                            INVESTORS
+                                        </div>
+                                        <div class="investorList"></div>
+                                    </div>
+                                    <div class="links">
+                                        <div>
+                                            LINKS
+                                        </div>
+                                        <div class="linksList"></div>
+                                    </div>
+                                    <div class="media" hidden="">
+                                        <div>
+                                            MEDIA
+                                        </div>
+                                        <div class="mediaList"></div>
+                                    </div>
+                                </div><br style="clear:both;">
+                            </div>
+                        </section><br style='clear:both;'>
+                    </div>
+                </div>
+            </div>
+        </div><!--footer end-->
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/jquery.fancybox.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.nicescroll.js" type="text/javascript"></script>
+	<script src="/static/js/d3.v3.min.js"></script>
+    <script src="/static/js/common-scripts.js"></script>
+    <script src="/static/js/embed-video.js"></script>
+    <script src="/static/js/time_options_radar.js"></script>
+	<script src="/static/js/polygon.js"></script>
+    <script src="/static/js/admin_page.js"></script>
+    <script type="text/javascript">
+    	var batch_data = {};
+    	var batches = [];
+      	window.onload = function(){
+      		getBatchData();
+      		$(".fancybox").fancybox();
+      	};
+    </script>
+  </body>
+</html>

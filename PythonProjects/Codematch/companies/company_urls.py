@@ -1,0 +1,23 @@
+from django.conf.urls import patterns, include, url
+
+companypatterns = patterns('',
+    url(r'^signUpCompany/', 'companies.views.signup_company'),
+    url(r'^editCompany/', 'companies.views.edit_company'),
+    url(r'^signInCompany/', 'companies.views.signin_company'),
+    url(r'^company/login/', 'companies.views.login_company'),
+    url(r'^createJobOffer/', 'companies.views.create_job_offer'),
+    url(r'^company/positions/', 'companies.views.company_positions'),
+    url(r'^company/editposition/', 'companies.views.edit_position'),
+    url(r'^company/publishposition/', 'companies.views.publish_position'),
+    url(r'^company/openposition/', 'companies.views.render_offer_page'),
+    url(r'^company/matches/', 'companies.views.render_matches_page'),
+    url(r'^company/edit/', 'companies.views.edit_company_profile'),
+    url(r'^company/batches/', 'companies.views.render_batch_page'),
+    url(r'^company/getBatches/', 'companies.views.company_batches'),
+    url(r'^companyBatchApplication/', 'companies.views.company_batch_application'),
+    url(r'^company/profile/', 'companies.views.show_company_profile'),
+    url(r'^company/getmatches/', 'companies.views.get_matches'),
+    url(r'^company/inbox/', 'companies.views.company_inbox'),
+    url(r'^company/getMesseges/', 'companies.views.inbox_messeges'),
+    url(r'^company/getpositions/', 'companies.views.get_positions'),
+)

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">    
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.css" rel="stylesheet">
+    <link href="/static/css/create_offer.css" rel="stylesheet">
+    <link href="/static/css/allpages.css" rel="stylesheet">
+    <link href="/static/css/multiple-select.css" rel="stylesheet">
+	<link href="/static/css/time_options_radar.css" rel="stylesheet">
+	<link href="/static/css/chart.css" rel="stylesheet">
+	<link href="/static/css/devicon.css" rel="stylesheet">
+	<link href="/static/css/rangeslider.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>Codematch.eu</b></a>
+            <!--logo end-->
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="/logout/">Logout</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu left-menu" id="nav-accordion">
+              
+              	  <p class="centered"><a href="profile.html"><img src="/media/{{company.profile_picture}}" class="img-circle" width="80" height="80"></a></p>
+              	  <h5 class="centered">{{company.user.username}}</h5>
+              	  <li class="mt menu-option">
+                      <a class="" href="/company/matches/">
+                          <span>Matches</span>
+                      </a>
+                  </li>
+                  <li class="menu-option">
+                      <a class="active" href="/company/positions/">
+                          <span>My Positions</span>
+                      </a>
+                  </li>
+                  <li class="menu-option">
+                      <a class="" href="/company/profile/">
+                          <span>Profile</span>
+                      </a>
+                  </li>
+                  <li class="menu-option">
+                      <a class="" href="/company/batches/">
+                          <span>Apply for Batch</span>
+                      </a>
+                  </li>
+                  <li class="menu-option">
+                      <a class="" href="/company/inbox/">
+                          <span>Inbox</span>
+                      </a>
+                  </li>
+                  <!--
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>UI Elements</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="general.html">General</a></li>
+                          <li><a  href="buttons.html">Buttons</a></li>
+                          <li><a  href="panels.html">Panels</a></li>
+                      </ul>
+                  </li>
+                  -->
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+              <div class="modal-body text-center">
+                    <section id="support" class="doublediagonal">
+                                        <div class="">
+                                            <!--<div class="offer-select">
+                                                <div class="field-line">What role are you looking for?</div>
+                                                <select class="developer-type">
+                                                  <option value="Front-end Developer">Front-end Developer</option>
+                                                  <option value="Back-end Developer">Back-end Developer</option>
+                                                  <option value="Mobile apps developer">Mobile apps developer</option>
+                                                  <option value="UX / UI Designer">UX / UI Designer</option>
+                                                  <option value="Data Scientist">Data Scientist</option>
+                                                  <option value="QA / Testing">QA / Testing</option>
+                                                </select>
+                                            </div>-->
+                                            <div>
+                                            <div class="offer-select">
+                                                <div class="field-line">Select 5 technological skills that you would like an ideal candidate to be knowledgable and passionate about.</div>
+	                                                <div style="width: 70%;margin:0 auto;">
+	                                                	<ul class="list-inline tech-stack-holder">
+	                                                		
+	                                                	</ul>
+	                                                </div>
+	                                                <div class="text-center"><span class="skills-counter">0/5</span></div>
+                                                	<div class="techSkillHolder"></div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                            <div class="offer-select">
+                                                <div class="field-line">What fields would matches spend their time mostly on during the job?</div>
+                                                <div class="chartHolder chart-company">
+											  	<span class="chart-label analysis">Analysis</span>
+										  		<span class="chart-label data-science rotateneg35">Data Science</span>
+										  		<span class="chart-label documentation rotateneg75">Documentation</span>
+										  		<span class="chart-label code-review rotate75">Code Review</span>
+										  		<span class="chart-label testing rotate35">Testing</span>
+										  		<span class="chart-label ui">UI/UX</span>
+										  		<span class="chart-label front-end rotateneg35">Front-End</span>
+										  		<span class="chart-label back-end rotateneg75">Back-End</span>
+										  		<span class="chart-label operations rotate75">Operations</span>
+										  		<span class="chart-label architecture rotate35">Architecture</span>
+											  	<div id="chart"></div>
+											  </div>
+                                             </div>
+                                            <div class="offer-select">
+                                                	<div class="col-lg-12">
+														<div class="over text-center">Maximum Annual Salary</div>
+														<center>
+														<div class="col-lg-7" style="display:inline-block;float:none;">
+															<input
+																class="salaryRange"
+															    type="range"
+															    min="1"
+															    max="210"
+															    step="1"
+															    value="1"
+															>
+														</div>
+														</center>
+														<div class="under text-center"><span>&#8364</span><span class="edit-salary"></span>k / year</div>
+													</div>
+													<br style="clear:both;"/>
+                                                </div>
+                                                <div class="offer-select">
+                                                    <div class="field-line">Title/Role for your open position?</div>
+                                                    <input type="text" class="form-control title"  style="width:300px;margin:0 auto;" placeholder="Full-stack engineer"/>
+                                                </div>
+                                                <div class="offer-select">
+                                                    <div class="field-line">Seniority level?</div>
+                                                    <div class="exp-level">
+	                                                    <span class="exp">Entry level</span>
+	                                                    <span class="exp">Mid level</span>
+	                                                    <span class="exp">Senior level</span>
+	                                                    <span class="exp">Lead level</span>
+                                                    </div>
+                                                    <div class="selectedExp"></div>
+                                                </div>
+                                                <div class="offer-select">
+                                                    <div class="field-line">Type of work?</div>
+                                                    <div class="worktype">
+	                                                    <span class="remote">Remote</span>
+	                                                    <span class="both">Remote / Onsite</span>
+	                                                    <span class="onsite">Onsite</span>
+                                                    </div>
+                                                    <div class="selectedWorktype"></div>
+                                                </div>
+                                                <div class="offer-select">
+                                                    <div class="field-line">Describe the project/product/service your match will be included in?</div>
+                                                    <textarea class="form-control summary" placeholder="Type here"></textarea>
+                                                	<div class="char-counter text-center"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                    </section>
+                </div>
+					<div class="bottom"><span class="offerBtn">
+				       	Create position <span class="gl glyphicon glyphicon-plus"></span>
+				       	</span>
+					</div>
+          </section>
+      </section>
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="/static/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.sparkline.js"></script>
+	<script src="/static/js/rangeslider.js"></script>
+    <!--common script for all pages-->
+    <script src="/static/js/common-scripts.js"></script>
+
+    <script src="/static/js/create_offer.js"></script>
+    <script src="/static/js/multiple-select.js"></script>
+    
+    <script src="/static/js/d3.v3.min.js"></script>
+    <script src="/static/js/time_options_radar.js"></script>
+	<script src="/static/js/initTimeChart.js"></script>
+	<script src="/static/js/display_tech_stack.js"></script>
+	<script src="/static/js/balance_timeprint.js"></script>
+    <script src="/static/js/zopim.js"></script>
+    <script type="text/javascript">
+      window.onload = function(){
+      		displayTechStack("{{tech_stack}}");
+            enableSkillSelection();
+             $(".salaryRange").on('change', function(){
+			 		$(".edit-salary").html($(this).val());
+			 });
+			 $('.salaryRange').rangeslider({polyfill: false});
+             $('.salaryRange').val(10).change();
+             
+             var text_max = 300;
+             $('.summary').attr("maxlength", text_max);
+		     $('.char-counter').html("0/"+text_max + ' characters');	
+		     $('.summary').keyup(function() {
+		        var text_length = $('.summary').val().length;
+		        $('.char-counter').html(text_length+"/"+text_max + ' characters');
+		    });
+        };
+    </script>
+  </body>
+</html>

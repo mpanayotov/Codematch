@@ -1,0 +1,53 @@
+.batch{
+	1px solid rgb(97, 152, 208);
+	margin: 10px;
+	text-align:center;
+	background-color:rgba(112, 171, 230, 0.63);
+	border-radius:5px;
+}
+.timer{
+	font-size:24px;
+	color:black;
+	text-align:center;
+}
+.applyButton{
+	margin: 20px auto;
+	width:40%;
+	color:white;
+	font-size:18px;
+	padding:10px;
+	border-radius:10px;
+	background-color:#3C843C;
+	opacity:0.9;
+}
+
+.applyButton:hover{
+	opacity:1;
+	cursor:pointer;
+}
+.expire{
+	margin-top:20px;
+}
+.expire, .expire-end{
+	color:white;
+	font-size:18px;
+}
+.batch-start{
+	margin-top:10px;
+}
+.batch-end, .batch-start, .location{
+	color:rgba(0,0,0,0.85);
+	font-size:16px;
+}
+.appliedSign, .approvedSign, .ongoing{
+	font-size:18px;
+}
+.approvedSign, .appliedSign, .ongoing{
+	padding:5px;
+	color:#061F67;
+	margin:15px 0px;
+}
+.stat{
+	font-size:13px;
+	color:rgba(0,0,0,0.8);
+}
