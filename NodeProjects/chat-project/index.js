@@ -5,7 +5,7 @@ var io = require('socket.io')(http);
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
-
+//connect
 io.on('connection', function(socket){
   socket.broadcast.emit('hi', "hello");
   console.log('a user connected');
