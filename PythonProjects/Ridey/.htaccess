@@ -1,0 +1,7 @@
+Options -Indexes +FollowSymLinks
+<IfModule mod_fcgid.c>
+ AddHandler fcgid-script .fcgi
+ RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ mysite.fcgi/$1 [QSA,L]
+</IfModule>

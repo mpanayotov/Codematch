@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">    
+    
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/style-responsive.css" rel="stylesheet">
+    <link href="/static/css/allpages.css" rel="stylesheet">
+	<link href="/static/css/multiple-select.css" rel="stylesheet">
+	<link href="/static/css/jquery.fancybox.css" rel="stylesheet">
+	<link href="/static/css/complete_talent_profile.css" rel="stylesheet">
+	<link href="/static/css/time_options_radar.css" rel="stylesheet">
+	<link href="/static/css/devicon.css" rel="stylesheet">
+	<link href="/static/css/devicon-colors.css" rel="stylesheet">
+	<link href="/static/css/chart.css" rel="stylesheet">
+	<link href="/static/css/rangeslider.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>Codematch.eu</b></a>
+            <!--logo end-->
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="/logout/">Logout</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu left-menu" id="nav-accordion">
+              
+              	  <p class="centered"><a><img src="/media/{{talent.profile_picture}}" class="img-round" width="80" height="80"></a></p>
+              	  <h5 class="centered">{{talent.username}}</h5>
+              	  <li class="mt menu-option">
+                      <a class="menu-option" href="/talent/matches/">
+                          <span>Matches</span>
+                      </a>
+                  </li>
+
+                  <!--<li class="menu-option">
+                      <a class="" href="/talent/batches/">
+                          <span>My Batches</span>
+                      </a>
+                  </li>-->
+                  <li class="menu-option">
+                      <a class="active" href="/talent/profile/">
+                          <span>Profile</span>
+                      </a>
+                  </li>
+                  <li class="menu-option">
+                      <a class="" href="/talent/batches/">
+                          <span>Apply for Batch</span>
+                      </a>
+                  </li>
+                  <li class="menu-option">
+                        <a class="" href="/talent/inbox/"><span>Inbox</span></a>
+                    </li>
+                  <!--
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>UI Elements</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="general.html">General</a></li>
+                          <li><a  href="buttons.html">Buttons</a></li>
+                          <li><a  href="panels.html">Panels</a></li>
+                      </ul>
+                  </li>
+                  -->
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+          		{% if reminder %}
+					  <div class="reminder">{{reminder}}</div>
+					{% endif %}
+				<div class="row">
+				    <div class="col-lg-5 col-sm-6 sectionHolder" id="tech-section">
+                    <div class="guide-line">Choose your favourite tech stack (5 skills)</div>
+                    <div class="section-form">
+                       <ul class="list-inline tech-stack-holder">
+                            <!--<li class="tech-skill techSkill">
+                                <a class="btn btn-default btn-lg tech">
+                                	<i class="devicon-css3-plain"></i>
+                                	<span class="network-name" >Android</span>
+                                </a>
+                            </li>-->
+                            
+                        </ul>         
+                	</div>
+                	<div class="skills-counter">0/5</div>
+                	<div class="techSkillHolder section-form">
+                		
+                	</div>
+              </div>
+             <div class="col-lg-5 col-sm-12 sectionHolder" id="time-section" hidden>
+             			<div class="col-lg-6 explain-holder">
+             				<div class="chart-option-explained"><span class="enhance">Documentation</span> -
+             					 Explanation and commentary of code and engineering tasks to aid other's understanding.</div>
+							<div class="chart-option-explained"><span class="enhance">Data Science</span> -
+             					 Live experimentation to test system hypothesis for use when iterating on further releases.</div>
+             				<div class="chart-option-explained"><span class="enhance">Analysis</span> -
+             					 Determining and capturing the requirements of a system.</div>
+             				<div class="chart-option-explained"><span class="enhance">Architecture</span> -
+             					 High level design and planning of a system to satisfy the requirements of the system.</div>
+             				<div class="chart-option-explained"><span class="enhance">Code Review</span> -
+             					 Reading and updating code to improve readability, maintainability and its performance.</div>
+             				<div class="chart-option-explained"><span class="enhance">Operations</span> -
+             					 Encompasses system provisioning, automation and administration to facilitate engineering tasks.</div>
+             				<div class="chart-option-explained"><span class="enhance">Testing</span> -
+             					 Writing and running a series of experiments to demonstrate correct performance of application under different scenarios.</div>
+             				<div class="chart-option-explained"><span class="enhance">UI/UX</span> -
+             					 Building the look and the feel of the application.</div>
+             				<div class="chart-option-explained"><span class="enhance">Front-End</span> -
+             					 Building the client-side of the application.</div>
+             				<div class="chart-option-explained"><span class="enhance">Back-End</span> -
+             					 Building the server-side application and interfaces.</div>
+             			</div>
+		                <div class="col-lg-6 text-center spider-chart">
+		                	<center>
+		                    <div class="chartHolder">
+							  	<span class="chart-label analysis">Analysis</span>
+						  		<span class="chart-label data-science rotateneg35">Data Science</span>
+						  		<span class="chart-label documentation rotateneg75">Documentation</span>
+						  		<span class="chart-label code-review rotate75">Code Review</span>
+						  		<span class="chart-label testing rotate35">Testing</span>
+						  		<span class="chart-label ui">UI/UX</span>
+						  		<span class="chart-label front-end rotateneg35">Front-End</span>
+						  		<span class="chart-label back-end rotateneg75">Back-End</span>
+						  		<span class="chart-label operations rotate75">Operations</span>
+						  		<span class="chart-label architecture rotate35">Architecture</span>
+							  	<div id="chart"></div>
+							  </div>
+							  </center>
+		                 </div>
+		            </div>
+                <div class="col-lg-5 col-sm-6 sectionHolder" id="salary-section" hidden>
+                <div class="col-lg-12 margin-up">
+								<div class="over text-center">Minimum Annual Salary that you are okay to receive (after taxes)</div>
+								<center>
+														<div class="col-lg-8" style="display:inline-block;float:none;">
+															<input
+																class="salaryRange"
+															    type="range"
+															    min="1"
+															    max="210"
+															    step="1"
+															    value="1"
+															>
+									</div>
+								</center>
+								<div class="under text-center"><span>&#8364</span><span class="edit-salary"></span>k / year</div>
+					</div>
+                </div>
+                <div class="col-lg-5 col-sm-6 sectionHolder" id="role-section" hidden>
+                <div class="section-form margin-up">
+                    <div class="text-center">
+                    <span class="guide-line">How would you describe your role?</span>
+                        <input type="text" class="form-control role-title"
+                         placeholder="Enthusiastic developer, Innovation seeker, Data Analyst, etc..."/>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6 sectionHolder" id="os-section" hidden>
+                <div class="section-form margin-up">
+                    <div class="text-center">
+                    <span class="guide-line" style="display: block;">What OS do you prefer?</span>
+                    	<div class="text-center">
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="osx" class="os-imgs" src="/static/img/osx.png">
+                    			<span style="display: block;">OSX</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="linux" class="os-imgs" src="/static/img/linux.png">
+                    			<span style="display: block;">Linux</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="windows" class="os-imgs" src="/static/img/windows.png">
+                    			<span style="display: block;">Windows</span>
+                    		</div>
+                    	</div>
+                      <!--<select class="operation-system form-control">
+                              <option value="linux">Linux</option>
+                              <option value="windows">Windows</option>
+                              <option value="osx">OSX</option>
+                      </select>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6 sectionHolder" id="editor-section" hidden>
+                <div class="section-form margin-up">
+                    <div class="text-center">
+                    <span class="guide-line" style="display: block;">What is your editor of choice?</span>
+                    <div class="text-center">
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="sublime" class="editor-imgs" src="/static/img/editor_images/sublime-text.png">
+                    			<span style="display: block;">SublimeText</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="vim" class="editor-imgs" src="/static/img/editor_images/vim.png">
+                    			<span style="display: block;">Vim</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="eclipse" class="editor-imgs" src="/static/img/editor_images/eclipse.png">
+                    			<span style="display: block;">Eclipse</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="emacs" class="editor-imgs" src="/static/img/editor_images/emacs.png">
+                    			<span style="display: block;">Emacs</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="notepad" class="editor-imgs" src="/static/img/editor_images/notepad.png">
+                    			<span style="display: block;">Notepad++</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="intellij" class="editor-imgs" src="/static/img/editor_images/intellij.png">
+                    			<span style="display: block;">IntelliJ</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="visual-studio" class="editor-imgs" src="/static/img/editor_images/visual-studio.png">
+                    			<span style="display: block;">Visual Studio</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="dreamweaver" class="editor-imgs" src="/static/img/editor_images/dreamweaver.png">
+                    			<span style="display: block;">Dreamweaver</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="netbeans" class="editor-imgs" src="/static/img/editor_images/netbeans.png">
+                    			<span style="display: block;">NetBeans</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="brackets" class="editor-imgs" src="/static/img/editor_images/brackets.png">
+                    			<span style="display: block;">Brackets</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="phpstorm" class="editor-imgs" src="/static/img/editor_images/phpstorm.png">
+                    			<span style="display: block;">PhpStorm</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="xcode" class="editor-imgs" src="/static/img/editor_images/xcode.png">
+                    			<span style="display: block;">Xcode</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="atom" class="editor-imgs" src="/static/img/editor_images/atom.png">
+                    			<span style="display: block;">Atom</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="coda" class="editor-imgs" src="/static/img/editor_images/coda.png">
+                    			<span style="display: block;">Coda</span>
+                    		</div>
+                    		<div style="display:inline-block;">
+                    			<img picked="false" value="aptana" class="editor-imgs" src="/static/img/editor_images/aptana.jpg">
+                    			<span style="display: block;">Aptana</span>
+                    		</div>
+                    	</div>
+                      <!--<select class="editor form-control">
+                              <option value="sublime">SublimeText</option>
+                              <option value="vim">Vim</option>
+                              <option value="eclipse">Eclipse</option>
+                              <option value="emacs">Emacs</option>
+                              <option value="notepad">Notepad++</option>
+                              <option value="intellij">IntelliJ</option>
+                              <option value="visual-studio">Visual Studio</option>
+                              <option value="dreamweaver">Dreamweaver</option>
+                              <option value="netbeans">NetBeans</option>
+                              <option value="brackets">Brackets</option>
+                              <option value="phpstorm">PhpStorm</option>
+                              <option value="xcode">Xcode</option>
+                              <option value="atom">Atom</option>
+                              <option value="aptana">Aptana</option>
+                         </select>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6 sectionHolder" id="exp-section" hidden>
+                <div class="section-form margin-up">
+                    <div class="text-center">
+                    <span class="guide-line">What label describes your current level of experience?</span>
+                      <select class="experience-level form-control">
+                              <option value="Entry level">Entry level</option>
+                              <option value="Mid level">Mid level</option>
+                              <option value="Senior level">Senior level</option>
+                              <option value="Lead level">Lead level</option>
+                            </select></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6 sectionHolder" id="relocate-section" hidden>
+                <div class="section-form margin-up">
+                    <div class="text-center">
+                    <span class="guide-line">Are you willing to relocate for your dream job?</span>
+                      <select class="relocation form-control">
+                              <option value="1">Yes</option>
+                              <option value="0">No</option>
+                            </select></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6 sectionHolder" id="worktype-section" hidden>
+                <div class="section-form margin-up">
+                    <div class="text-center">
+                    <span class="guide-line">What type of work would you prefer?</span>
+                      <select class="worktype form-control">
+                              <option value="Onsite">Onsite</option>
+                              <option value="Onsite / Remote">Onsite / Remote</option>
+                              <option value="Remote">Remote</option>
+                            </select></div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6 sectionHolder" id="work-section" hidden>
+                <div class="section-form margin-up">
+                    <div class="text-center">
+                    <span class="guide-line">Describe your favourite work you'd like to be involved in?</span>
+                        <textarea class="form-control favourite-work" placeholder="Willing to create innovative e-commerce platforms that help people communicate more easily"></textarea>
+                    </div>
+                    </div>
+                </div>
+             
+                <div class="col-lg-5 col-sm-6 sectionHolder" id="github-section" hidden>
+                	<div class="section-form margin-up">
+	                    <div class="guide-line"><span>Your Github profile url</span></div>
+		                    <div>
+		                        <input type="text" class="form-control github" placeholder="https://github.com/yourname"/>
+		                    </div>
+		                </div>
+		           </div>
+		           <div class="col-lg-5 col-sm-6 sectionHolder" id="linkedin-section" hidden>
+                	<div class="section-form margin-up">
+	                    <div class="guide-line"><span>Your Linkedin profile url</span></div>
+		                    <div>
+		                        <input type="text" class="form-control linkedin" placeholder="https://www.linkedin.com/in/yourname"/>
+		                    </div>		    
+		                </div>
+		           </div>
+		           <div class="col-lg-5 col-sm-6 sectionHolder" hidden>
+                	<div class="section-form margin-up">
+	                    <div class="guide-line"><span>That was all.Thank you for your time :)</span></div>
+		                    <div class="text-center">
+		                        <a class="btn btn-default btn-lg saveBtn"><span>Complete your profile</span></a>
+		                    </div>		    
+		                </div>
+		           </div>
+            <div>
+                    <span class="prev" hidden>previous</span>
+                    <span class="next" >next</span>
+                </div>
+          </section>
+      </section>
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/jquery.fancybox.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.nicescroll.js" type="text/javascript"></script>
+	
+    <!--common script for all pages-->
+    <script src="/static/js/common-scripts.js"></script>
+    <!--scripts for this page-->
+    <script src="/static/js/multiple-select.js"></script>
+    <script src="/static/js/complete_talent_profile.js"></script>
+    <!--radar visualization script, time options-->
+    <script src="/static/js/d3.v3.min.js"></script>
+    <script src="/static/js/time_options_radar.js"></script>
+    <script src="/static/js/display_tech_stack.js"></script>
+	<script src="/static/js/initTimeChart.js"></script>
+	<script src="/static/js/balance_timeprint.js"></script>
+	<script src="/static/js/rangeslider.js"></script>
+    <script src="/static/js/zopim.js"></script>
+    <script type="text/javascript">
+		 window.onload = function() {
+		     $('.developer-type').multipleSelect();
+		     $('.itfields-type').multipleSelect();
+		     displayTechStack("{{tech_stack}}");
+		     enableSkillSelection();
+		     $(".salaryRange").on('change', function(){
+			 		$(".edit-salary").html($(this).val());
+			});
+			$('.salaryRange').rangeslider({polyfill: false});
+            $('.salaryRange').val(5).change();
+		 };
+    </script>
+  </body>
+</html>

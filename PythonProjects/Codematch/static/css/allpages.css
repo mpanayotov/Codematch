@@ -1,0 +1,16 @@
+.menu-option a{
+	font-size:16px !important;
+	text-align:center;
+}
+.create-offer a{
+	font-size:17px !important;
+	text-align:center;
+	color:white !important;
+	background-color: #0F440F;
+	border-radius: 10px;
+	opacity:0.9;
+}
+.create-offer a:hover{
+	background-color: #0F440F !important;
+	opacity:1;
+}

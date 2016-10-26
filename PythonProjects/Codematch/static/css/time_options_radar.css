@@ -1,0 +1,113 @@
+      	.chartHolder{
+      		padding:25px;
+      		position:relative;
+      		display:inline-block;
+      	}
+      	.chart-label{
+      		position:absolute;
+      		white-space: nowrap;    
+   			font-size: 15px;
+   			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   			color:grey;
+   			opacity:0.6;
+      	}
+      	.architecture{
+      		top:3%;
+      		right:7%;
+      	}
+      	.analysis{
+      		top:-1%;
+      		left:43%;
+      	}
+      	.data-science{
+      		top:16%;
+      		left:9%;
+      	}
+      	.documentation{
+      		top:47%;
+      		left:-2%;
+      	}
+      	.code-review{
+      		top:55%;
+      		left:3%;
+      	}
+      	.testing{
+      		top:83%;
+      		left:17%;
+      	}
+      	.ui{
+      		bottom:0%;
+      		left:44%;
+      	}
+      	.front-end{
+      		bottom:5%;
+      		right:10%;
+      	}
+      	.back-end{
+      		bottom:23%;
+      		right:-9%;
+      	}
+      	.operations{
+      		top:26%;
+      		right:-16%;
+      	}
+      	.rotate35 {
+		    -webkit-transform: rotate(35deg);
+		    -webkit-transform-origin: left top;
+		    -moz-transform: rotate(35deg);
+		    -moz-transform-origin: left top;
+		    -ms-transform: rotate(35deg);
+		    -ms-transform-origin: left top;
+		    -o-transform: rotate(35deg);
+		    -o-transform-origin: left top;
+		    transform: rotate(35deg);
+		    transform-origin: left top;
+		}
+		.rotateneg35 {
+		    -webkit-transform: rotate(-35deg);
+		    -webkit-transform-origin: left top;
+		    -moz-transform: rotate(-35deg);
+		    -moz-transform-origin: left top;
+		    -ms-transform: rotate(-35deg);
+		    -ms-transform-origin: left top;
+		    -o-transform: rotate(-35deg);
+		    -o-transform-origin: left top;
+		    transform: rotate(-35deg);
+		    transform-origin: left top;
+		}
+		.rotateneg75 {
+		    -webkit-transform: rotate(-75deg);
+		    -webkit-transform-origin: left top;
+		    -moz-transform: rotate(-75deg);
+		    -moz-transform-origin: left top;
+		    -ms-transform: rotate(-75deg);
+		    -ms-transform-origin: left top;
+		    -o-transform: rotate(-75deg);
+		    -o-transform-origin: left top;
+		    transform: rotate(-75deg);
+		    transform-origin: left top;
+		}
+		.rotate75 {
+		    -webkit-transform: rotate(75deg);
+		    -webkit-transform-origin: left top;
+		    -moz-transform: rotate(75deg);
+		    -moz-transform-origin: left top;
+		    -ms-transform: rotate(75deg);
+		    -ms-transform-origin: left top;
+		    -o-transform: rotate(75deg);
+		    -o-transform-origin: left top;
+		    transform: rotate(75deg);
+		    transform-origin: left top;
+		}
+		.rotate15 {
+		    -webkit-transform: rotate(15deg);
+		    -webkit-transform-origin: left top;
+		    -moz-transform: rotate(15deg);
+		    -moz-transform-origin: left top;
+		    -ms-transform: rotate(15deg);
+		    -ms-transform-origin: left top;
+		    -o-transform: rotate(15deg);
+		    -o-transform-origin: left top;
+		    transform: rotate(15deg);
+		    transform-origin: left top;
+		}
