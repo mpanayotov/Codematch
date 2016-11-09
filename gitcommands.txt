@@ -8,3 +8,6 @@ git push origin master
 git rm -r --cached projectName
 git push -u origin master
 git remote set-url origin git@github.com:mpanayotov/Codematch.git
+
+virtualenv folder
+virtualenv -p /usr/bin/python2.7 folder
