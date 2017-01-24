@@ -1,0 +1,191 @@
+.tech, .tech:hover{
+	margin:2px;
+	background-color: #70ABE6;
+	color:black;
+	padding:6px !important;
+}
+.chosenTech, .chosenTech:hover{
+	margin:2px;
+	background-color: #70ABE6;
+	color:black;
+	padding:6px !important;
+}
+.tech i{
+	font-size:15px;
+	float:none;
+}
+.network-name{
+	font-size:12px !important;
+}
+.match{
+	border-top:1px solid #DADADA;
+	border-bottom:1px solid #DADADA;
+	padding:10px 0px;
+	cursor: pointer;
+}
+.shapes{
+	background-color:#DADADA;
+}
+.shape-div{
+	position:relative;
+	top:2px;
+	left:45px;
+	text-align:center;
+}
+.shape{
+	width:130px;
+	height:130px;
+	z-index:333;
+	position:relative;
+	cursor: pointer;
+}
+.logo-company{
+	width:90px;
+	height:90px;
+	z-index:2;
+	position:relative;
+	left:-40px;
+}
+.company-name{
+	text-align:center;
+	margin-top:17%;
+	font-size: 18px;
+	color:#3C843C;
+}
+.more-info{
+	margin-top:12%;
+	display:inline-block;
+}
+.more-info div{
+	font-size:14px;
+	color:black;
+}
+.talent-info{
+	text-align:center;
+}
+.exp-lvl{
+	background-color: #73E3EB;
+}
+.remote{
+	background-color: #2EC977;
+}
+.tech-stack-holder{
+	max-height:200px;
+	overflow:auto;
+	border: 1px solid #DADADA;
+}
+.edit-field{
+	padding:0px !important;
+}
+.edit-field:hover{
+	background-color:#B2CCEC;
+	cursor:pointer;
+}
+.exp-lvl, .relocate, .exp-lvl:hover, .relocate:hover, .worktype, .worktype:hover{
+	background-color: #3C843C;
+	color:white;
+	padding: 7px !important;
+    margin: 2px;
+}
+.position-details a{
+	padding:7px !important;
+	margin:2px;
+}
+.position-salary{
+	color:#0F2B6B;
+	font-size:15px;
+}
+.position-title{
+	margin-top:5px;
+	font-size: 19px;
+    color: #3C843C;
+}
+.title-edit{
+	font-size: 22px;
+    color: #3C843C;
+    margin-bottom:25px;
+}
+.edit-input{
+	width: 100%;
+	height:100%;
+	text-align: center;
+	background-color:#B2CCEC;
+	border:none;
+	vertical-align: top;
+}
+.project-description{
+	color:rgba(0,0,0,0.85);
+	font-size:17px;
+}
+.position{
+	padding:10px 0px;
+	border-bottom: 1px solid #DADADA;
+}
+.position-status{
+	margin-top:45%;
+	font-size:19px;
+	color:#48673C;
+}
+.editbtn{
+	margin-top:20%;
+	font-size:18px;
+	cursor:pointer;
+	color:rgba(0,0,0,0.9);
+}
+.publishbtn{
+	margin-top:20%;
+	font-size:18px;
+	cursor:pointer;
+	color:#05194E;
+}
+.work-description{
+	margin:15px 0px;
+	font-size:20px;
+	color:rgba(0,0,0,0.9);
+	text-align:center;
+}
+.work-description textarea{
+	min-height:100px;
+}
+.exp-level, .worktype-holder{
+	margin:10px 0px;
+}
+.over{
+	color:rgba(0,0,0,0.7);
+	font-size:18px;
+}
+.under{
+	color: #3C843C;
+	font-size:22px;
+}
+.save-edit{
+	float:right;
+	font-size:20px;
+	color:rgba(0,0,0,0.9);
+	margin:5px;
+	padding:5px 10px;
+	cursor:pointer;
+}
+.save-edit:hover{
+	background-color:#DADADA;
+}
+.bottom{
+	bottom:0px;
+	width:100%;
+}
+.open-position{
+	float:right;
+	margin-right:5%;
+	margin-bottom:15px;
+	font-size: 18px;
+    cursor: pointer;
+    color: rgba(0,0,0,0.9);
+    padding:5px 10px;
+}
+.open-position:hover{
+	background-color:#DADADA;
+}
+.gl{
+	font-size:14px;
+	color:rgba(0,0,0,0.85);
+}

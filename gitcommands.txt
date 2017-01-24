@@ -1,0 +1,13 @@
+touch .gitignore
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin youruser@yourserver.com:/path/to/my_project.git
+git push origin master
+
+git rm -r --cached projectName
+git push -u origin master
+git remote set-url origin git@github.com:mpanayotov/Codematch.git
+
+virtualenv folder
+virtualenv -p /usr/bin/python2.7 folder

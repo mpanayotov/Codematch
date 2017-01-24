@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Ridey.bg | Намери/предложи бързо и лесно свободно място за пътуване.</title>
+		<!-- SEO meta tags -->
+	    <meta name="description" content="Ridey.bg e онлайн платформа за намиране и предлагане на свободни места за пътувания."/>
+	    <meta name="keywords" content="пътуване, евтино, автомобил, удобно"/>
+	    <meta name="purpose" content="Пътувай бързо, евтино и удобно."/>
+	    <meta name="distribution" content="Global" />
+	    <meta name="rating" content="General" />
+	    <meta name="robots" content="index, follow" />
+	    <meta name="publisher" content="ridey.bg" />
+	    <meta name="classification" content="service, free service, Ltd" />
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <meta name="revisit-after" content="21 days" />
+	    <!-- End of SEO meta tags -->    
+	
+	    <!-- Facebook meta tags -->
+	    <meta property="og:locale" content="bg_BG">
+	    <meta property="og:type" content="website">
+	    <meta property="og:title" content="Ridey.bg | Намери/предложи бързо и лесно свободно място за пътуване.">
+	    <meta property="og:site_name" content="Ridey">
+	    <meta property="og:url" content="http://www.ridey.bg">
+	    <meta name="description" content="Ridey.bg e онлайн платформа за намиране и предлагане на свободни места за пътувания."/>
+	    <meta property="og:description" content="Иновативният начин да пътуваш.">
+	        
+	    <link rel="image_src" href="http://liveridey.sinilink.com/static/imgs/ridey_logo.png" / >
+	    <meta property="og:image" content="http://www.ridey.bg/static/imgs/ridey_logo.png">
+	    <meta property="og:image:type" content="image/png">
+	    <!-- End of Facebook meta tags -->
+		
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="/static/css/styles.css" rel="stylesheet">
+    <link href="/static/css/magnific-popup.css" rel="stylesheet">
+    <link href="/static/css/star-rating.min.css" rel="stylesheet">
+	</head>
+	<body>
+<div class="wrapper">
+    <div class="box">
+        <div class="row row-offcanvas row-offcanvas-left">
+                      
+          
+            <!-- sidebar -->
+            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar" hidden>
+              
+              	<ul class="nav">
+          			<li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
+            	</ul>
+               
+                <ul class="nav hidden-xs" id="lg-menu">
+                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> Featured</a></li>
+                    <li><a href="#stories"><i class="glyphicon glyphicon-list"></i> Stories</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-paperclip"></i> Saved</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
+                </ul>
+                <ul class="list-unstyled hidden-xs" id="sidebar-footer">
+                    <li>
+                      <a href="http://www.bootply.com"><h3>Bootstrap</h3> <i class="glyphicon glyphicon-heart-empty"></i> Bootply</a>
+                    </li>
+                </ul>
+              
+              	<!-- tiny only nav-->
+              <ul class="nav visible-xs" id="xs-menu">
+                  	<li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
+                    <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
+                  	<li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
+                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
+                </ul>
+              
+            </div>
+            <!-- /sidebar -->
+          
+            <!-- main right col -->
+            <div class="column col-sm-10 col-xs-11" id="main">
+                
+                <!-- top nav -->
+              	<div class="navbar navbar-blue navbar-static-top">  
+                    <div class="navbar-header">
+                      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle</span>
+                        <span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+                      </button>
+                      <!--<a href="/" class="navbar-brand logo">b</a>-->
+                      <a href="#postModal" class="visible-xs navbar-brand updateFeature" role="button" data-toggle="modal">Update</a>                 
+                  	</div>
+                  	
+                  	<nav class="collapse navbar-collapse" role="navigation">
+                    <div class="navbar-form navbar-left searchHolder">
+                        <div class="input-group input-group-sm" style="max-width:360px;width:100%;">
+                          <input type="text" class="form-control nameSearch" placeholder="Оценете потребител" name="srch-term" id="srch-term">
+                          <div class="input-group-btn">
+                            <button class="btn btn-default searchButton" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                          </div>
+                        </div>
+                        <div class="resultsHolder"></div>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                    	{% if user.is_authenticated %}
+	                      <li class="dropdown">
+	                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>-->
+	                        <a href="#" class="dropdown-toggle profile" data-toggle="dropdown"><img src="http://graph.facebook.com/{{fb_user.fb_id}}/picture?type=large" class="img-circle pull-left profilePicture"><span>{{fb_user.fb_name}}</span></a>
+	                        <ul class="dropdown-menu profileMenu">
+	                          <div class="profileContainer">
+	                              <div class="phoneNumberHolder">
+	                                  <img class="img-rounded numberPic" src="/static/imgs/callButton.png">
+	                                  {% if fb_user.phone_number %}
+	                                  	<input type="text" pattern="\d*" placeholder="{{fb_user.phone_number}}" class="phoneNumberInput" />
+	                                  {% else %}
+	                                  	<input type="text" pattern="\d*" placeholder="0888 88 88 88" class="phoneNumberInput" />	                                  
+	                                  {% endif %}
+	                                  <button class="saveNumberButton">Save</button>
+	                              </div>
+	                              <div class="carHolder">
+	                                <a class="carImage" href="/media/{{fb_user.car_image}}"><img src="/media/{{fb_user.car_image}}" class="img-rounded numberPic"/></a>
+	                                <input type="file" id="car_image" onchange="uploadCarImage();" class="picUploader" accept="image/*">
+	                                <!--<input type="file" class="custom-file-input">-->
+	                              </div>
+	                              <div class="comments" onclick="openCommentBox();">
+	                                <p class="commentLine">Виж коментарите за теб</p>
+	                              </div>
+	                              <a href="/logout/" style="text-align: center;color:white;font-size:15px;"><p>Излез</p></a>
+	                          </div>
+	                        </ul>
+	                      </li>
+	                     {% else %}
+	                     <li class="dropdown">
+	                     	<div class="fb-login-holder fb-login-holder-desktop">
+		                       <img class="hidden-xs fb-login-button" src="/static/imgs/facebook-login-bg.png" width="188" height="35" style="margin-top:7px;"/>
+		                       <img style="text-align: center;margin:0 auto;" class="visible-xs fb-login-button" src="/static/imgs/facebook-login-bg.png" width="220" height="50"/>
+		                 	</div>
+		                 </li>
+		                 {% endif %}
+                    </ul>
+                    <!--<ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">-->
+                        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>-->
+                        <!--<a href="#" class="dropdown-toggle navOption" data-toggle="dropdown">
+                        <span class="navBarOption">Посоки на пътуване</span></a>
+                        <ul class="dropdown-menu directionsMenu">
+                          <li class="Sofia-Burgas" onclick="showPostsForDirection(this);"><a>Бургас - София</a></li>
+                          <li class="Sofia-Stara Zagora" id="initial-direction" onclick="showPostsForDirection(this);"><a>Стара Загора - София</a></li>
+                          <li class="Sofia-Plovdiv" onclick="showPostsForDirection(this);"><a>Пловдив - София</a></li>
+                        </ul>
+                      </li>
+                    </ul>-->
+                    <ul class="nav navbar-nav navbar-right">
+                      <!--<li>
+                        <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
+                      </li>-->
+                      <li class="updateFeature">
+                        <a href="#postModal" role="button" class="hidden-xs dropdown-toggle navOption" data-toggle="modal"><span class="navBarOption">Update</span></a>     
+                      </li>
+                      <li class="visible-xs">
+                      <a href="#contactsModal" class="dropdown-toggle navOption" data-toggle="modal">Контакти</a>
+						<a href="#termsModal" class="dropdown-toggle navOption" data-toggle="modal">Общи условия</a>
+					 </li>
+                      <!--<li>
+                        <a href="#"><span class="badge">badge</span></a>
+                      </li>-->
+                    </ul>
+                  	</nav>
+                </div>
+                <!-- /top nav -->
+              
+                <div class="padding">
+                    <div class="full col-sm-9 mainContentWrapper">
+                      
+                        <!-- content -->                      
+                      	<div class="row">
+                          
+                         <!-- main col left --> 
+                         <div class="col-sm-5 postsWrapper">
+                           
+                              <!--<div class="panel panel-default">
+                                <div class="panel-thumbnail"><img src="bg_5.jpg" class="img-responsive"></div>
+                                <div class="panel-body">
+                                  <p class="lead">Urbanization</p>
+                                  <p>45 Followers, 13 Posts</p>
+                                  
+                                  <p>
+                                    <img src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s28" width="28px" height="28px">
+                                  </p>
+                                </div>
+                              </div>
+
+                           
+                              <div class="panel panel-default">
+                                <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootstrap Examples</h4></div>
+                                  <div class="panel-body">
+                                    <div class="list-group">
+                                      <a href="http://bootply.com/tagged/modal" class="list-group-item">Modal / Dialog</a>
+                                      <a href="http://bootply.com/tagged/datetime" class="list-group-item">Datetime Examples</a>
+                                      <a href="http://bootply.com/tagged/datatable" class="list-group-item">Data Grids</a>
+                                    </div>
+                                  </div>
+                              </div>
+                           
+                              <div class="well"> 
+                                   <form class="form-horizontal" role="form">
+                                    <h4>What's New</h4>
+                                     <div class="form-group" style="padding:14px;">
+                                      <textarea class="form-control" placeholder="Update your status"></textarea>
+                                    </div>
+                                    <button class="btn btn-primary pull-right" type="button">Post</button><ul class="list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
+                                  </form>
+                              </div>-->
+                              <div class="fast-options"><center>
+                              	<span class="Sofia-Burgas" onclick="showPostsForDirection(this);"><a>Бургас - София</a></span>
+                          		<span class="Sofia-Stara Zagora" id="initial-direction" onclick="showPostsForDirection(this);"><a>Стара Загора - София</a></span>
+                          		<span class="Sofia-Plovdiv" onclick="showPostsForDirection(this);"><a>Пловдив - София</a></span>
+                              	</center></div>
+                              
+                              <div class="postArea">
+                              	<div class="reminder" hidden><center>
+                              	<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                              	<span class="reminder-text">Изберете в коя посока ще пътувате</span>
+                              	<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                              </center></div>
+                              	
+                                <div class="rideDirection"><span class="ride ride-left">От <span class="directions-from dirfrom">Стара Загора</span> за <span class="directions-to dirto">София</span><span class="glyphicon glyphicon-ok okaytick okayleft" aria-hidden="true"></span></span><span class="ride ride-right">От <span class="directions-from-oposite dirfrom">София</span> за <span class="directions-to-oposite dirto">Стара Загора</span><span class="glyphicon glyphicon-ok okaytick okayright" aria-hidden="true"></span></span></div>
+                                <div class="postTextWrapper"><textarea readonly="" placeholder="Утре ще пътувам към София около 13:00 часа, 3 места 10 лв" class="postText"></textarea></div>
+                                <div class="postButtonHolder">
+                                	<span class="postButton">Post</span>
+                                </div>
+                                
+                              </div>
+
+                              <div class="postsDirection">
+                                <div class="chosenDirection"><span class="direction direction-left dir-active">От <span class="directions-from go-from">Стара Загора</span> за <span class="directions-to go-to">София</span><span class="glyphicon glyphicon-ok dirtick dir-tick-left" aria-hidden="true"></span></span><span class="direction direction-right">От <span class="directions-from-oposite go-from">София</span> за <span class="directions-to-oposite go-to">Стара Загора</span><span class="glyphicon glyphicon-ok dirtick dir-tick-right" aria-hidden="true"></span></span></div>
+                              </div>
+
+                              <!--<div class="panel panel-default rideSharePost">
+                                 <div class="profileCredentials"><img src="http://graph.facebook.com/517267866/picture?type=large" class="img-circle pull-left">
+                                 <div class="nameAndRating">
+                                    <div class="timePost">40 min.</div>
+                                    <div class="name">Г-н Д-Д</div>
+                                    <div class="rating">
+                                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>☆</span>
+                                    </div>
+                                  </div></div>
+                                 <a class="carImage" href="http://www.telegraph.co.uk/cars/images/audi/a6/audi-A6-main-image-large.jpg"><img src="/static/imgs/car_default.png" class="img-rounded pull-left"></a>
+                                 <a class="callButton" href="tel:0888714822"><img src="/static/imgs/callButton.png" class="img-rounded connect" /></a>
+                                 <a class="messengerButton" href="fb-messenger://user/100000364223040"><img src="/static/imgs/fb-messenger-button.png" class="img-rounded connect" /></a>
+                                  <div class="panel-body offertext">
+                                    <div class="clearfix"></div>
+                                     <div class="lineSeparator"></div>
+                                    Утре пътувам около 8 и 30, имам 3 свободни места, цена 10лв :)
+                                  </div>
+                                  <div class="lineSeparatorFull"></div>
+                                  <div class="postUpdate">
+                                    <span class="updateTag">Update:</span>
+                                    <span class="update">Няма повече места!</span>
+                                  </div>
+                              </div>-->
+                              <div hidden class="posts-loader"><center><img src="/static/imgs/ajax-loader.GIF"></center></div>
+								<div class="one-direction">
+                           		<!--{% for post,duration in posts %}
+                           			<div class="panel panel-default rideSharePost" id="{{post.fb_id}}">
+		                                  <div class="profileCredentials">
+		                                 <img src="http://graph.facebook.com/{{post.fb_id}}/picture?type=large" class="img-circle pull-left">
+		                                  <div class="nameAndRating">
+		                                    <div class="timePost">{{duration}}</div>
+		                                    <div class="name">{{post.name}}</div>
+		                                    <div class="rating">
+		                                    {% for i in "12345" %}
+		                                    	{% if i|floatformat:"0" <= post.rating|floatformat:"0" %}
+		                                    		<span>&#9733;</span>
+		                                    	{% else %}
+		                                    		<span>☆</span>
+		                                    	{% endif %}
+		                                    {% endfor %}
+		                                    </div>
+		                                  </div>
+		                                  </div>
+		                                 <a class="carImage" href="/media/{{post.car_image}}"><img src="/media/{{post.car_image}}" class="img-rounded pull-left"></a>
+		                                 {% if flavour == "mobile" %}
+		                                 	{% if post.phone_number %}
+		                                 		<a class="callButton" href="tel:{{post.phone_number}}"><img src="/static/imgs/callButton.png" class="img-rounded connect" /></a>
+		                                 	{% endif %}
+		                                 	{% if iphone %}
+			                                 <a class="messengerButton" href="fb-messenger://user-thread/{{post.fb_id}}"><img src="/static/imgs/fb-messenger-button.png" class="img-rounded connect" /></a>
+		                                 	{% else %}
+			                                 <a class="messengerButton" href="fb-messenger://user/{{post.fb_id}}"><img src="/static/imgs/fb-messenger-button.png" class="img-rounded connect" /></a>		      
+		                                 	{% endif %}
+		                                 {% else %}
+		                                 	{% if post.phone_number %}
+		                                 		<div class="phoneWebContainer hidden-xs"><div class="phoneWeb" hidden>{{post.phone_number}}</div></div>
+		                                 		<a class="callButton" style="cursor: pointer;" onclick="showPhoneNumber(this);"><img src="/static/imgs/callButton.png" class="img-rounded connect" /></a>
+			                                {% endif %}
+			                                <a class="messengerButton" target="_blank" href="https://www.messenger.com/t/{{post.fb_id}}"><img src="/static/imgs/fb-messenger-button.png" class="img-rounded connect" /></a>
+		                                 {% endif %} 
+		                                 <div class="panel-body offertext">
+		                                    <div class="clearfix"></div>
+		                                     <div class="lineSeparator"></div>
+		                                    	{{post.message}}
+		                                  </div>
+		                                  <div class="lineSeparatorFull"></div>
+		                                  {% if post.update %}
+		                                  <div class="postUpdate">
+		                                    <span class="updateTag">Update:</span>
+		                                    <span class="update">{{post.update}}</span>
+		                                  </div>
+		                                  {% endif %}
+		                              </div>
+                           		{% endfor %}
+                           	-->
+                           	</div>
+                           	
+                           	<div class="second-direction" hidden>
+                           		<!--{% for post,duration in posts_two %}
+                           			<div class="panel panel-default rideSharePost" id="{{post.fb_id}}">
+		                                  <div class="profileCredentials">
+		                                 <img src="http://graph.facebook.com/{{post.fb_id}}/picture?type=large" class="img-circle pull-left">
+		                                  <div class="nameAndRating">
+		                                    <div class="timePost">{{duration}}</div>
+		                                    <div class="name">{{post.name}}</div>
+		                                    <div class="rating">
+		                                    {% for i in "12345" %}
+		                                    	{% if i|floatformat:"0" <= post.rating|floatformat:"0" %}
+		                                    		<span>&#9733;</span>
+		                                    	{% else %}
+		                                    		<span>☆</span>
+		                                    	{% endif %}
+		                                    {% endfor %}
+		                                    </div>
+		                                  </div>
+		                                  </div>
+		                                 <a class="carImage" href="/media/{{post.car_image}}"><img src="/media/{{post.car_image}}" class="img-rounded pull-left"></a>
+		                                 {% if flavour == "mobile" %}
+		                                 	{% if post.phone_number %}
+		                                 		<a class="callButton" href="tel:{{post.phone_number}}"><img src="/static/imgs/callButton.png" class="img-rounded connect" /></a>
+		                                 	{% endif %}
+		                                 	{% if iphone %}
+			                                 <a class="messengerButton" href="fb-messenger://user-thread/{{post.fb_id}}"><img src="/static/imgs/fb-messenger-button.png" class="img-rounded connect" /></a>
+		                                 	{% else %}
+			                                 <a class="messengerButton" href="fb-messenger://user/{{post.fb_id}}"><img src="/static/imgs/fb-messenger-button.png" class="img-rounded connect" /></a>		      
+		                                 	{% endif %}
+		                                 {% else %}
+		                                 	{% if post.phone_number %}
+		                                 		<div class="phoneWebContainer hidden-xs"><div class="phoneWeb" hidden>{{post.phone_number}}</div></div>
+		                                 		<a class="callButton" style="cursor: pointer;" onclick="showPhoneNumber(this);"><img src="/static/imgs/callButton.png" class="img-rounded connect" /></a>
+			                                {% endif %}
+			                                <a class="messengerButton" target="_blank" href="https://www.messenger.com/t/{{post.fb_id}}"><img src="/static/imgs/fb-messenger-button.png" class="img-rounded connect" /></a>
+		                                 {% endif %} 
+		                                 <div class="panel-body offertext">
+		                                    <div class="clearfix"></div>
+		                                     <div class="lineSeparator"></div>
+		                                    	{{post.message}}
+		                                  </div>
+		                                  <div class="lineSeparatorFull"></div>
+		                                  {% if post.update %}
+		                                  <div class="postUpdate">
+		                                    <span class="updateTag">Update: </span>
+		                                    <span class="update">{{post.update}}</span>
+		                                  </div>
+		                                  {% endif %}
+		                              </div>
+                           		{% endfor %}-->
+                           	</div>
+                              <!--<div class="panel panel-default">
+                                <div class="panel-heading"><h4>What Is Bootstrap?</h4></div>
+                               	<div class="panel-body offertext">
+                                	Bootstrap is front end frameworkto build custom web applications that are fast, responsive &amp; intuitive. It consist of CSS and HTML for typography, forms, buttons, tables, grids, and navigation along with custom-built jQuery plug-ins and support for responsive layouts. With dozens of reusable components for navigation, pagination, labels, alerts etc..                          </div>
+                              </div>-->
+
+                           		
+                           
+                          </div>
+                          
+                          <!-- main col right -->
+                          <!--<div class="col-sm-7 postsWrapper">
+                               
+                                <div class="well"> 
+                                   <form class="form">
+                                    <h4>Sign-up</h4>
+                                    <div class="input-group text-center">
+                                    <input type="text" class="form-control input-lg" placeholder="Enter your email address">
+                                      <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button">OK</button></span>
+                                    </div>
+                                  </form>
+                                </div>
+                      
+                               <div class="panel panel-default">
+                                 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootply Editor &amp; Code Library</h4></div>
+                                  <div class="panel-body">
+                                    <p><img src="http://graph.facebook.com/517267866/picture?type=large" class="img-circle pull-right"> <a href="#">The Bootstrap Playground</a></p>
+                                    <div class="clearfix"></div>
+                                    <hr>
+                                    Design, build, test, and prototype using Bootstrap in real-time from your Web browser. Bootply combines the power of hand-coded HTML, CSS and JavaScript with the benefits of responsive design using Bootstrap. Find and showcase Bootstrap-ready snippets in the 100% free Bootply.com code repository.
+                                  </div>
+                               </div>
+                            
+                               <div class="panel panel-default">
+                                 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Stackoverflow</h4></div>
+                                  <div class="panel-body">
+                                    <img src="http://graph.facebook.com/517267866/picture?type=large" class="img-circle pull-right"> <a href="#">Keyword: Bootstrap</a>
+                                    <div class="clearfix"></div>
+                                    <hr>
+                                    
+                                    <p>If you're looking for help with Bootstrap code, the <code>twitter-bootstrap</code> tag at <a href="http://stackoverflow.com/questions/tagged/twitter-bootstrap">Stackoverflow</a> is a good place to find answers.</p>
+                                    
+                                    <hr>
+                                    <form>
+                                    <div class="input-group">
+                                      <div class="input-group-btn">
+                                      <button class="btn btn-default">+1</button><button class="btn btn-default"><i class="glyphicon glyphicon-share"></i></button>
+                                      </div>
+                                      <input type="text" class="form-control" placeholder="Add a comment..">
+                                    </div>
+                                    </form>
+                                    
+                                  </div>
+                               </div>
+
+                               <div class="panel panel-default">
+                                 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
+                                  <div class="panel-body">
+                                    <ul class="list-group">
+                                    <li class="list-group-item">Modals</li>
+                                    <li class="list-group-item">Sliders / Carousel</li>
+                                    <li class="list-group-item">Thumbnails</li>
+                                    </ul>
+                                  </div>
+                               </div>
+                            
+                               <div class="panel panel-default">
+                                <div class="panel-thumbnail"><img src="bg_4.jpg" class="img-responsive"></div>
+                                <div class="panel-body">
+                                  <p class="lead">Social Good</p>
+                                  <p>1,200 Followers, 83 Posts</p>
+                                  
+                                  <p>
+                                    <img src="https://lh6.googleusercontent.com/-5cTTMHjjnzs/AAAAAAAAAAI/AAAAAAAAAFk/vgza68M4p2s/s28-c-k-no/photo.jpg" width="28px" height="28px">
+                                    <img src="https://lh4.googleusercontent.com/-6aFMDiaLg5M/AAAAAAAAAAI/AAAAAAAABdM/XjnG8z60Ug0/s28-c-k-no/photo.jpg" width="28px" height="28px">
+                                    <img src="https://lh4.googleusercontent.com/-9Yw2jNffJlE/AAAAAAAAAAI/AAAAAAAAAAA/u3WcFXvK-g8/s28-c-k-no/photo.jpg" width="28px" height="28px">
+                                  </p>
+                                </div>
+                              </div>
+                            
+                          </div>
+                       </div>/row-->
+                      
+                        <!--<div class="row">
+                          <div class="col-sm-6">
+                            <a href="#">Twitter</a> <small class="text-muted">|</small> <a href="#">Facebook</a> <small class="text-muted">|</small> <a href="#">Google+</a>
+                          </div>
+                        </div>
+                      
+                        <div class="row" id="footer">    
+                          <div class="col-sm-6">
+                            
+                          </div>
+                          <div class="col-sm-6">
+                            <p>
+                            <a href="#" class="pull-right">©Copyright 2013</a>
+                            </p>
+                          </div>
+                        </div>
+                      
+                      <hr>
+                      
+                      <h4 class="text-center">
+                      <a href="http://bootply.com/96266" target="ext">Download this Template @Bootply</a>
+                      </h4>
+                        
+                      <hr>-->
+                        
+                      
+                    </div><!-- /col-9 -->
+
+                </div><!-- /padding -->
+            </div>
+            <!-- /main -->
+          
+        </div>
+    </div>
+</div>
+
+
+<!--post modal-->
+<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog  updatePostBox">
+  <div class="modal-content">
+  	<div><center><span class="reminder-text">Актуализирайте последната си публикация</span></center></div>
+  	{% if user.is_authenticated and user_last_post %}
+      <div class="panel panel-default last-post last-post-user-content">
+                                 <div class=""><img src="http://graph.facebook.com/{{fb_user.fb_id}}/picture?type=large" class="img-circle pull-left img-last-post">
+                                 <div class="nameAndRating">
+                                    <div class="timePost">{{last_post_duration}}</div>
+                                    <div class="name">{{fb_user.fb_name}}</div>
+                                    <!--<div class="rating">
+                                    {% for i in "12345" %}
+		                                    	{% if i|floatformat:"0" <= fb_user.rating|floatformat:"0" %}
+		                                    		<span>&#9733;</span>
+		                                    	{% else %}
+		                                    		<span>☆</span>
+		                                    	{% endif %}
+		                                    {% endfor %}
+                                    </div>-->
+                                  </div></div>
+                                 <a ><img src="/media/{{fb_user.car_image}}" class="img-rounded pull-left img-last-post"></a>
+                                 <a class="callButton"><img src="/static/imgs/callButton.png" class="img-rounded connect" /></a>
+                                 <a class="messengerButton"><img src="/static/imgs/fb-messenger-button.png" class="img-rounded connect" /></a>
+                                  <div class="panel-body offertext">
+                                    <div class="clearfix"></div>
+                                     <div class="lineSeparator"></div>
+                                    	<span class="last-post-container">{{user_last_post}}</span>
+                                  </div>
+                                  <div class="lineSeparatorFull"></div>
+                                  <div class="postUpdateLast">
+                                  	<span class="updateTagLast">Update:</span>
+                                    <span class="updateLast"><textarea class="lastPostUpdateText" placeholder="Няма повече места / Имам още 1 място"></textarea>
+                                    	<span class="updateButton">Update</span>	
+                                    </span>
+                                
+                                  </div>
+  			</div>
+  	{% else %}
+  		<div class="panel panel-default last-post">
+                                 <div class=""><img src="/static/imgs/ridey_lambo.png" class="img-circle pull-left img-last-post img-user">
+                                 <div class="nameAndRating">
+                                    <div class="timePost">от 23 минути</div>
+                                    <div class="name">Ridey.bg</div>
+                                    <div class="rating">
+                                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                                    </div>
+                                  </div></div>
+                                 <img src="/static/imgs/ridey_aston.png" class="img-rounded pull-left img-last-post img-car">
+                                 <a class="callButton"><img src="/static/imgs/callButton.png" class="img-rounded connect" /></a>
+                                 <a class="messengerButton"><img src="/static/imgs/fb-messenger-button.png" class="img-rounded connect" /></a>
+                                  <div class="panel-body offertext">
+                                    <div class="clearfix"></div>
+                                     <div class="lineSeparator"></div>
+                                    <span class="last-post-container">Утре пътувам около 8 и 30, имам 3 свободни места, цена 10лв :)</span>
+                                  </div>
+                                  <div class="lineSeparatorFull"></div>
+                                  <div class="postUpdateLast">
+                                  	<span class="updateTagLast">Update:</span>
+                                    <span class="updateLast"><textarea class="lastPostUpdateText" readonly="readonly" placeholder="Няма повече места / Имам още 1 място"></textarea>
+                                    	<span class="updateButtonNoPosts">Update</span>	
+                                    </span>
+                                
+                                  </div>
+  			</div>
+  	{% endif %}
+  	<div class="update-success" hidden><center><span class="reminder-text">Актуализирахе последната си публикация успешно.</span></center></div>
+  		</div>
+	</div>
+</div>
+<!-- Comment PopUp Box -->
+<div class='commentPopUpBox' hidden>
+        <span class='glyphicon glyphicon-remove close' onclick='closeCommentBox();'></span> 
+        <div class="">
+
+                                 <img src="http://graph.facebook.com/picture" class="pull-left img-circle commentBox-image">
+                                 <div class="commentBox-nameAndRating">
+                                    <div class="commentBox-name">TestUser</div>
+                                    <!--<div class="commentBox-rating rating">
+                                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>☆</span>
+                                    </div>-->
+                                  </div></div>
+        <div class="commentsHolder">
+        <p class="commentsLine">Коментари</p>
+        <div class="commentsContainer">
+        	<!--<div class="singleComment">
+        		<img src="http://graph.facebook.com/517267866/picture" class="img-circle imgComment">
+				<span class="commentName">Ivan Atanasov</span>
+				<div class="commentText">
+					Коректен шофьор
+				</div>
+        	</div>-->
+        </div>
+        	<!--<div class="comment-mobile visible-xs" onclick='openMobileCommentBox();'><p class="commentsLine">Остави коментар</p></div>
+	        <div class="fillCommentBox hidden-xs">
+	        	<div class="positiveComment">
+	        		<span class="positive-label comment-label">Коректен шофьор</span>
+	        		<span class="positive-label comment-label">Коректен пасажер</span>
+	        	</div>
+	        	<div class="comment-text"><textarea class="textarea-positive-comment txt-positive"></textarea><div onclick="saveComment(this);" class="positive-comment-Button">Comment</div></div>
+	        	
+	        	<div class="negativeComment">
+	        		<span class="negative-label comment-label">Некоректен шофьор</span>
+	        		<span class="negative-label comment-label">Некоректен пасажер</span>
+	        	</div>
+	        	<div class="comment-text"><textarea class="textarea-negative-comment txt-negative"></textarea><div onclick="saveComment(this);" class="negative-comment-Button">Comment</div></div>
+	        	
+	        </div>-->
+	        <div class="comment-text">
+	        	<textarea class="text-cmt"></textarea>
+	        	<div onclick="saveComment(this);" class="cmt-button">Comment</div>
+	        </div>
+        </div>
+      </div>
+  </div>
+<!-- Mobile Comment Box -->
+<!--
+<div class='mobile-comment-box' hidden>
+	<span class='glyphicon glyphicon-remove close' onclick='closeMobileCommentBox();'></span> 
+	        <div class="fillCommentBox">
+	        	<div class="positiveComment">
+	        		<span class="positive-label comment-label">Коректен шофьор</span>
+	        		<span class="positive-label comment-label">Коректен пасажер</span>
+	        	</div>
+	        	<div class="comment-text"><textarea class="textarea-positive-comment-mobile txt-positive"></textarea></div>
+	        	<div onclick="saveComment(this);" class="positive-comment-Button-mobile">Comment</div>
+	        	
+	        	<div class="negativeComment">
+	        		<span class="negative-label comment-label">Некоректен шофьор</span>
+	        		<span class="negative-label comment-label">Некоректен пасажер</span>
+	        	</div>
+	        	<div class="comment-text"><textarea class="textarea-negative-comment-mobile txt-negative"></textarea></div>
+	        	<div onclick="saveComment(this);" class="negative-comment-Button-mobile">Comment</div>
+	        	
+	        </div>
+        </div>
+      </div>
+</div>-->
+<!-- TERMS OF SERVICE-->
+<div class="modal fade in" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" hidden>
+			<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title text-center" id="myModalLabel">ОБЩИ УСЛОВИЯ</h4>
+				</div>
+				<div class="modal-body text-center">
+					<h5>ЗА ПОЛЗВАНЕ НА УСЛУГАТА „Райди“, ДОСТЪПНА ПОСРЕДСТВОМ УЕБСАЙТА <a href="http://www.ridey.bg">www.ridey.bg</a></h5>
+					<h5>ПРЕДМЕТ</h5>
+					<p class="text-justify">Чл. 1. (1) Услугата „Райди“, за целите на тези общи условия наричана още УСЛУГАТА, се предоставя от дружество „Алекс Ентърпрайсиз“ (ДРУЖЕСТВОТО) посредством уебсайт с адрес „www.ridey.bg".</p>
+					<p class="text-justify">(2) ДРУЖЕСТВОТО има право да променя разпоредбите на тези общи условия по всяко време по реда, изискван от Закона за задълженията и договорите.</p>
+
+					<h5>ПРАВА И ЗАДЪЛЖЕНИЯ НА СТРАНИТЕ</h5>
+					<p class="text-justify">Чл. 2.(1) УСЛУГАТА представлява платформа за лесно свързване на шофьори със свободни места и желаещи за пътуване в същата посока, страни по който са ДРУЖЕСТВОТО в качеството на ДОВЕРЕНИК, и всяко трето лице-потребител, което желае да встъпи в правоотношението в качеството на ДОВЕРИТЕЛ. </p>
+					
+					<p class="text-justify">(2)Общите условия се отнасят до всички потребители на сайта, независимо дали са регистрирани потребители или просто посетители. Използвайки сайта www.ridey.bg, Вие автоматично се съгласявате с Общите условия. Ако не Сте съгласни с тях, Ви молим да не използвате този сайт. Не се позволява използването на услугите на "Райди" без изричното и пълно съгласие с Общите условия за ползване.</p>
+
+					<p class="text-justify">(3) ДОВЕРЕНИКЪТ не поема разходите, които ДОВЕРИТЕЛЯТ е направил за да се установи, да поддържа връзка или да преустанови връзка с ДОВЕРЕНИКА или неговата автоматизирана платформа за предоставяне на УСЛУГАТА. ДОВЕРИТЕЛЯТ сам осигурява необходимото му за ползването на УСЛУГАТА компютърно оборудване и достъп до Интернет.</p>
+					<p class="text-justify">(4) ДОВЕРЕНИКЪТ не носи отговорност за понесените вреди от ДОВЕРИТЕЛЯ при или по повод ползване на УСЛУГАТА.</p>
+					<p class="text-justify">(5) ДОВЕРЕНИКЪТ не може да бъде държан отговорен за достоверността на информацията, която потребителите публикуват.</p>
+
+					<p class="text-justify">(6) Райди не носи отговорност за съдържанието на обявите/постовете, както и за пътуването. Райди не носи отговорност и за действия на свои потребители, дори те да са използвали услугите на сайта по позволен или непозволен, според Общите условия, начин. Райди е посредник в свързването между страните на шофьорите и пасажерите. По никакъв начин Райди не е част от уговорките или споразуменията между тези страни. Райди не е платформа за предоставяне на транспортни услуги. Сайтът е посредник между потребители, които искат да споделят пътуване помежду си със собствени средства. Уговорките, които се осъществяват чрез платформата са единствено между шофьори и пасажери – потребители на сайта. Райди не е част от уговорките между тях, не урежда и не е отговорен за детайлите, свързани с пътуването, и не се ангажира с разрешаването на възникнали проблеми между шофьорите и пасажерите, както и за вреди в следствие или по време на пътуването.</p>
+
+					<p class="text-justify">(7) Услугата, която ДОВЕРЕНИКЪТ предоставя, не може да се използва от нито една от страните по споразумението или уговорката с цел печалба или с комерсиална и професионална цел.</p>
+
+					<p class="text-justify">(8) На потребителите на сайта не се позволява публикуването на унизително, невярно и клеветническо съдържание, както и такова, което нарушава нечии интелектуални права.</p>
+
+					<p class="text-justify">(9) ДОВЕРИТЕЛЯТ се съгласява да получава търговски съобщения и реклами от довереникът с встъпването в договорното правоотношение. Доверителят не може да се позовава на регистрацията си в Регистъра за електронните адреси на юридическите лица, които не желаят да получават непоискани търговски съобщения за да ангажира отговорността на Довереника.</p>
+
+					<p class="text-justify">(9) При създаване, обновяване или промяна на профила си, потребителите се съгласяват и приемат, че цялата информация, като телефонен номер и снимка на автомобил, която предоставят на сайта, е валидна, пълна и реална.</p>
+
+					<h5>НАЧИН НА СКЛЮЧВАНЕ НА ДОГОВОРА</h5>
+
+					<p class="text-justify">Чл. 3 (1) За да използва предоставяната от ДОВЕРЕНИКЪТ услуга, за да публикува обява ДОВЕРИТЕЛЯТ е длъжен предварително да се регистрира чрез изразяване на съгласие да се използва неговата регистрация на уеб сайт адрес “www.facebook.com” и всякакви други брандирани и ко-брандирани с “Facebook” уеб сайтове (включително поддомейни, международни версии, визуални елементи и мобилни версии) при спазване на условията и начините, определени между ДОВЕРИТЕЛЯ и FACEBOOK INC. или Facebook Ireland Limited и настоящите общи условия. Ако доверителя не се нуждае от публикуване на обява и е в качеството си на пасажер, може да използва услугата и без регистрация, като преди това се запознае с обшите условия. При регистрация лицето декларира ,че е навършило 18 години.</p>
+
+					<p class="text-justify">(2) Чрез натискане на виртуалния бутон за регистрация, ДОВЕРИТЕЛЯТ извършва електронно изявление по смисъла на Закона за електронния документ и електронния подпис, с което декларира, че е запознат с настоящите Общи условия, приема ги и се задължава да ги спазва. Със записването му на съответен носител в сървъра на Дружеството чрез общоприет стандарт за преобразуване по технически начин, правещ възможно неговото възпроизвеждане, електронното изявление придобива качеството на електронен документ по смисъла на цитирания закон. Дружеството може да съхранява в лог-файлове на своя сървър IP адреса на ДОВЕРИТЕЛЯ, както и всяка друга информация, необходима за идентифициране на ДОВЕРИТЕЛЯ и възпроизвеждане на електронното му изявление за приемане на Общите условия, в случай на възникване на правен спор.</p>
+					<p class="text-justify">(3) ДОВЕРИТЕЛЯТ, с приемане на тези общи условия, се съгласява информацията, която не представлява лични данни по смисъла на Закона за защита на личните данни, да бъде съхранявана и използвана от ДОВЕРЕНИКА за целите на конкретното правоотношение, както и за евентуални бъдещи еднотипни договори за поръчка.</p>
+					<h5>Недействителност</h5>
+					<p class="text-justify">чл.5 Недействителността на една от клаузите на тези общи условия не влече недействителност на останалата част от общите условия.</p>
+					<h5>Приложимо право</h5>
+					<p class="text-justify">Чл.6 По всички неуредени от настоящите Общи условия въпроси се прилагат разпоредбите на действащото законодателство на Република България.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+				</div>
+				</div>
+			</div>
+			</div>
+			
+<!-- Contact Form-->
+<div class="modal fade in" id="contactsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" hidden>
+			<div class="modal-dialog">
+				<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+				</div>
+				<div class="modal-body text-center">
+					<section id="support" class="doublediagonal">
+            <div class="">
+                <div class="section-heading scrollpoint sp-effect3">
+                    <h3>Свържете се с нас</h1>
+                    <div class="divider div5"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
+                                <form id="contactForm" role="form">
+                                    <div class="form-group">
+                                        <input id="nameCF" type="text" class="form-control" placeholder="Your name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="emailCF" type="email" class="form-control" placeholder="Your email *">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea id="messageCF" cols="30" rows="10" class="form-control" placeholder="Your message"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-lg">Изпрати</button>
+                                </form>
+                            </div>
+                            <div class="col-md-4 col-sm-4 contact-details scrollpoint sp-effect2">
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h4 class="media-heading">
+                                            <a href="mailto:support@ridey.bg">support@ridey.bg</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Затвори</button>
+				</div>
+				</div>
+			</div>
+	</div>
+
+	<div class="footer hidden-xs">
+		<a href="#contactsModal" data-toggle="modal">Контакти</a>
+		<a href="#termsModal" data-toggle="modal">Общи условия</a>
+		</div>
+<!-- SignIn Box -->
+<div class='signInBox' hidden>
+        <span class='glyphicon glyphicon-remove close' onclick='$(".signInBox").hide();'></span>
+        <p class='top-label commentsLine'>
+          Моля, първо влезте в профила си.
+        </p>
+        <div class="loginbutton commentsLine fb-login-button fb-login-holder">
+            <img src="/static/imgs/facebook-login-bg.png" width="240"/>
+        </div>
+        <center><a href="#termsModal" data-toggle="modal">Общи условия</a></center>
+      </div>
+	<!-- script references -->
+	<script>
+		//global variables
+		var user_is_authenticated = "{{user.is_authenticated}}";
+		var startFrom = [0,0];
+		var comment_id = null;
+		var user_fb_id = "{{fb_user.fb_id}}";
+		var user_fb_rating = parseInt("{{fb_user.rating}}");
+		var user_fb_name = "{{fb_user.fb_name}}";
+		var user_fb_car_image = "{{fb_user.car_image}}";
+		var user_fb_phone_number = "{{fb_user.phone_number}}";
+		var last_post_id = "{{last_post_id}}";
+		var canScroll = true;
+		//alert("{{flavour}}");
+	</script>
+		<script src="/static/js/jquery-2.1.4.min.js"></script>
+		<script src="/static/js/bootstrap.min.js"></script>
+		<script src="/static/js/scripts.js"></script>
+    <script type="text/javascript" src="/static/js/magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/static/js/fblogin.js"></script>
+    <script type="text/javascript" src="/static/js/rideshare.js"></script>
+ 	<script type="text/javascript" src="/static/js/uploadImage.js"></script>
+ 	<script src="/static/phpCF/jqBootstrapValidation.js"></script>
+    <script src="/static/phpCF/contact_me.js"></script>
+    <script type="text/javascript" src="/static/js/GA.js"></script>
+    <!-- Begin Inspectlet Embed Code -->
+	<script type="text/javascript" id="inspectletjs">
+	window.__insp = window.__insp || [];
+	__insp.push(['wid', 1583377427]);
+	(function() {
+	function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+	setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+	})();
+	</script>
+	<!-- End Inspectlet Embed Code -->
+		</body>
+</html>

@@ -1,0 +1,61 @@
+.img-chat{
+	width:70px;
+	height:70px;
+}
+.block-el{
+	display:inline-block;
+}
+.chat-name{
+	margin-left:15px;
+}
+.chat-msg{
+	height:70px;
+	overflow:auto;
+	display: table-cell;
+	vertical-align:middle !important;
+}
+.msg-hold{
+	max-height:70px;
+	overflow: hidden;
+}
+.conversation{
+	border-top: 1px solid #DADADA;
+    border-bottom: 1px solid #DADADA;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+.media-object{
+	width:70px;
+	height:70px;
+}
+.chat-div{
+	margin-top:25px;
+}
+.chat-container {
+    margin-top: 20px;
+    float: none !important;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+}
+.messege-box{
+	height:60px;
+	resize: none;
+}
+.send-btn{
+	padding-top:17px !important;
+	padding-bottom:15px !important;
+}
+.back-btn{
+	display:inline-block;
+	position:absolute;
+	top:5px;
+	left:5px;
+	cursor: pointer;
+	z-index:999;
+	color:#0B0B58;
+}
+.back-btn span{
+	font-size:15px;
+	color:#0B0B58;
+}

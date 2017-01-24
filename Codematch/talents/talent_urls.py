@@ -1,0 +1,21 @@
+from django.conf.urls import patterns, include, url
+
+talentpatterns = patterns('',
+    url(r'^verifyEmail/', 'talents.email_verification.activation_email'),
+    url(r'^confirm/(?P<activation_key>.*)/', 'talents.email_verification.confirm'),
+    url(r'^createUser/', 'talents.views.create_user'),
+    url(r'^signIn/', 'talents.views.sign_in_user'),
+    url(r'^login/', 'talents.views.log_in_user'),
+    url(r'^completeDevProfile/', 'talents.views.complete_dev_profile'),
+    url(r'^editProfileAndMatch/', 'talents.views.edit_profile_and_match'),
+    url(r'^talent/matches/', 'talents.views.talent_matches'),
+    url(r'^talent/batches/', 'talents.views.render_batch_page'),
+    url(r'^talent/getBatches/', 'talents.views.talent_batches'),
+    url(r'^talent/complete/', 'talents.views.complete_talent_profile'),
+    url(r'^talent/profile/', 'talents.views.show_talent_profile'),
+    url(r'^talent/getmatches/', 'talents.views.get_matches'),
+    url(r'^talentBatchApplication/', 'talents.views.talent_batch_application'),
+    url(r'^talent/inbox/', 'talents.views.talent_inbox'),
+    url(r'^talent/getMesseges/', 'talents.views.inbox_messeges'),
+    url(r'^logout/', 'talents.views.log_out'),
+)
